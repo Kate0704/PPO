@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: "$project.rootDir/tools/script-git-version.gradle"
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
@@ -22,14 +23,27 @@ android {
         applicationId "ppo.hello_world"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 1
-        versionName "0.0.1"
+        versionCode gitVersionCode
+        versionName gitVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.build
     }
 
-    productFlavors
+    flavorDimensions "stage"
+    productFlavors {
+        dev {
+            dimension "stage"
+            versionCode gitVersionCodeTime
+            versionName gitVersionName
+        }
+
+        prod {
+            dimension "stage"
+            versionCode gitVersionCode
+            versionName gitVersionName
+        }
+    }
 
     buildTypes {
         release {
