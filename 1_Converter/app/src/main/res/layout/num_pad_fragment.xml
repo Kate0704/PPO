@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/NumPad"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ppo.converter.NumPadFragment"
+    android:layout_marginTop="350dp"
+    android:orientation="horizontal">
+
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                style="@style/NumberStyle"
+                android:text="7"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text="8"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text="9"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                style="@style/NumberStyle"
+                android:text="4" />
+            <Button
+                style="@style/NumberStyle"
+                android:text="5"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text="6"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                style="@style/NumberStyle"
+                android:text="1"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text="2"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text="3"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                style="@style/NumberStyle"
+                android:background="@color/colorPrimary"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text="0"/>
+            <Button
+                style="@style/NumberStyle"
+                android:text=","/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/delete_clicked_border"
+            android:text="AC"
+            android:textSize="24dp"
+            android:textColor="@color/colorText"/>
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/delete_clicked_border"
+            android:src="@android:drawable/ic_input_delete" />
+    </TableLayout>
+
+</LinearLayout>

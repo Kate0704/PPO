@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:id="@+id/length_button"
+        android:layout_width="150dp"
+        android:layout_height="115dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/button_clicked_border">
+
+        <ImageView
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:src="@drawable/ic_length" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Length"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_button"
+        android:layout_width="150dp"
+        android:layout_height="115dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/button_clicked_border">
+
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_area" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/volume_button"
+        android:layout_width="150dp"
+        android:layout_height="115dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/button_clicked_border">
+
+        <ImageView
+            android:layout_width="54dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:elevation="2dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_volume" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volume"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

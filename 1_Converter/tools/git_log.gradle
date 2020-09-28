@@ -1,0 +1,8 @@
+def getGitCommand = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'log','--date=local','--name-status','--after="2020.08.10"'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}

@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.4'
+        classpath "org.ajoberstar.grgit:grgit-core:4.0.2"
+    }
+}
+
+import org.ajoberstar.grgit.Grgit
+
+ext {
+    git = Grgit.open(currentDir: projectDir)
+    gitVersionName = git.describe(tags: true)
+    gitVersionCode = git.tag.list().size().toInteger()
+    gitVersionCodeTime = git.head().time.toInteger()
+}
+
+//task printVersion() {
+//    println("Version Name: $gitVersionName")
+//    println("Version Code: $gitVersionCode")
+//    println("Version Code Time: $gitVersionCodeTime\n")
+//}
+
+
