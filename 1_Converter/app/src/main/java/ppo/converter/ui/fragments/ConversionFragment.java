@@ -6,7 +6,11 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -20,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import ppo.converter.R;
 import ppo.converter.databinding.FragmentConversionBinding;
@@ -28,41 +33,34 @@ import ppo.converter.ui.custom.UnitPickerListDialog;
 import ppo.converter.viewModels.ConversionViewModel;
 import ppo.converter.viewModels.ModelFactory;
 
-public class ConversionFragment extends Fragment implements View.OnClickListener {
+public class ConversionFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
     private FragmentConversionBinding binding;
     private ConversionViewModel mViewModel;
-    static UnitPickerListDialog myDialogFragment;
+    UnitPickerListDialog myDialogFragment;
+    TextView valueSelected, unitSelected;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentConversionBinding.inflate(getLayoutInflater());
-        String t = ConvertLengthActivity.title;
-        mViewModel = ViewModelProviders.of(getActivity(), new ModelFactory(getResources(), t)).get(ConversionViewModel.class);
-        String unit = mViewModel.getUnits()[0];
-        binding.listbtn1.setText(unit.substring(unit.lastIndexOf(" ") + 1));
-        binding.listbtn2.setText(unit.substring(unit.lastIndexOf(" ") + 1));
-        binding.unit1.setText(unit.substring(0, unit.lastIndexOf(" ")));
-        binding.unit2.setText(unit.substring(0, unit.lastIndexOf(" ")));
+        mViewModel = ViewModelProviders.of(getActivity(), new ModelFactory(getResources(), ConvertLengthActivity.title)).get(ConversionViewModel.class);
+        initViews();
         return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        binding.text1.setTextColor(getResources().getColor(R.color.colorAccent));
         myDialogFragment = new UnitPickerListDialog(mViewModel.getUnits());
-
-        binding.listbtn1.setOnClickListener(this);
-        binding.listbtn2.setOnClickListener(this);
+        setListeners();
 
         final MutableLiveData<String> value = mViewModel.getInputValue();
         value.observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 if(!value.getValue().equals("")) {
-                    binding.text1.setText(value.getValue());
+                    valueSelected.setText(value.getValue());
                     convert();
                 }
             }
@@ -72,22 +70,45 @@ public class ConversionFragment extends Fragment implements View.OnClickListener
         unit.observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                String val = unit.getValue();
-                if(!val.equals("")) {
-                    TextView unitChanged = mViewModel.getUnitChanged();
-                    unitChanged.setText(val.substring(val.lastIndexOf(" ") + 1));
-                    if (unitChanged.getId() == R.id.listbtn1)
-                        binding.unit1.setText(val.substring(0, val.lastIndexOf(" ")));
-                    else binding.unit2.setText(val.substring(0, val.lastIndexOf(" ")));
+                if (!(unit.getValue().equals(""))) {
+                    unitSelected.setText(mViewModel.getUnitShort(unit.getValue()));
+                    if (unitSelected == binding.listbtn1)
+                        binding.unit1.setText(mViewModel.getUnitFull(unit.getValue()));
+                    else
+                        binding.unit2.setText(mViewModel.getUnitFull(unit.getValue()));
                     convert();
                 }
             }
         });
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
+    void convert(){
+        double val = Double.parseDouble(valueSelected.getText().toString());
+        String from = binding.unit1.getText().toString() + " " + binding.listbtn1.getText().toString();
+        String to = binding.unit2.getText().toString() + " " + binding.listbtn2.getText().toString();
+        if (valueSelected == binding.text1)
+            binding.text2.setText(mViewModel.convert(val, from, to));
+        else
+            binding.text1.setText(mViewModel.convert(val, to, from));
+    }
+
+    void initViews() {
+        String unit = mViewModel.getUnits()[0];
+        binding.listbtn1.setText(unit.substring(unit.lastIndexOf(" ") + 1));
+        binding.listbtn2.setText(unit.substring(unit.lastIndexOf(" ") + 1));
+        binding.unit1.setText(unit.substring(0, unit.lastIndexOf(" ")));
+        binding.unit2.setText(unit.substring(0, unit.lastIndexOf(" ")));
+        valueSelected = binding.text1;
+        binding.text1.setTextColor(getResources().getColor(R.color.colorAccent));
+    }
+
+    void setListeners() {
+        binding.listbtn1.setOnClickListener(this);
+        binding.listbtn2.setOnClickListener(this);
+        binding.text1.setOnClickListener(this);
+        binding.text2.setOnClickListener(this);
+        binding.text1.setOnLongClickListener(this);
+        binding.text2.setOnLongClickListener(this);
     }
 
     @Override
@@ -106,20 +127,27 @@ public class ConversionFragment extends Fragment implements View.OnClickListener
         }
     }
 
-
-
-    void convert(){
-        double val = Double.parseDouble(binding.text1.getText().toString());
-        String from = binding.unit1.getText().toString() + " " + binding.listbtn1.getText().toString();
-        String to = binding.unit2.getText().toString() + " " + binding.listbtn2.getText().toString();
-        String result = mViewModel.convert(val, from, to);
-        binding.text2.setText(result);
+    @Override
+    public void onClick(View v) {
+        if (v == binding.listbtn1 || v == binding.listbtn2) {
+            unitSelected = ((TextView) v);
+            showDialog();
+        }
+        else {
+            valueSelected.setTextColor(getResources().getColor(R.color.colorText));
+            valueSelected = ((TextView) v);
+            mViewModel.inputValue(valueSelected);
+        }
+        ((TextView)v).setTextColor(getResources().getColor(R.color.colorAccent));
     }
 
     @Override
-    public void onClick(View v) {
-        mViewModel.unitChanged((TextView)v);
-        ((TextView)v).setTextColor(getResources().getColor(R.color.colorAccent));
-        showDialog();
+    public boolean onLongClick(View v) {
+        ClipData clip = ClipData.newPlainText("clip", ((TextView) v).getText().toString());
+        ClipboardManager clipboard = (ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(getActivity(), "Text copied", Toast.LENGTH_SHORT)
+                .show();
+        return false;
     }
 }

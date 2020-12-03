@@ -54,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="1"
-                android:textSize="28dp" />
+                android:textSize="28dp"
+                android:longClickable="true"/>
 
             <TextView
                 android:id="@+id/unit1"
@@ -115,9 +116,9 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:enabled="false"
                 android:text="1"
-                android:textSize="28dp" />
+                android:textSize="28dp"
+                android:longClickable="true"/>
 
             <TextView
                 android:id="@+id/unit2"

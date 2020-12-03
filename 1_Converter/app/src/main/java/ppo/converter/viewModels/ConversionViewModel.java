@@ -1,5 +1,6 @@
 package ppo.converter.viewModels;
 
+import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.view.View;
 import android.widget.Button;
@@ -15,18 +16,17 @@ import java.util.Objects;
 import ppo.converter.R;
 
 public class ConversionViewModel extends ViewModel {
-    private static String[] units;
-    private static double[] coeffs;
+    static String[] units;
+    static double[] coeffs;
     MutableLiveData<String> input = new MutableLiveData<String>("");
-    private TextView unit;
 
     public MutableLiveData<String> getInputValue(){
         return input;
     }
-    public TextView getUnitChanged(){
-        return unit;
-    }
     public String[] getUnits() { return units; }
+
+    public String getUnitShort(String s) { return s.substring(s.lastIndexOf(" ") + 1); }
+    public String getUnitFull(String s) { return s.substring(0, s.lastIndexOf(" ")); }
 
     public ConversionViewModel(Resources res, String title){
         if (title.equals("Length converter"))
@@ -43,14 +43,19 @@ public class ConversionViewModel extends ViewModel {
     }
 
     public void inputValue(View view){
-        String number = ((Button) view).getText().toString();
-        String val = input.getValue();
-        boolean dotCheckOK = !(number.equals(".") && (val.equals("") || val.contains(".")));
-        if (val.length() < 15 && dotCheckOK)
-            if (val.equals("0") && !number.equals("."))
-                input.setValue(number);
-            else
-                input.setValue(val + number);
+        if (view instanceof Button) {
+            String number = ((Button) view).getText().toString();
+            String val = input.getValue();
+            boolean dotCheckOK = !(number.equals(".") && (val.equals("") || val.contains(".")));
+            if (val.length() < 15 && dotCheckOK)
+                if (val.equals("0") && !number.equals("."))
+                    input.setValue(number);
+                else
+                    input.setValue(val + number);
+        }
+        else {
+            input.setValue(((TextView) view).getText().toString());
+        }
     }
 
     public String convert(double val, String from, String to) {
@@ -69,7 +74,7 @@ public class ConversionViewModel extends ViewModel {
             input.setValue(input.getValue().substring(0, input.getValue().length() - 1));
     }
 
-    public void unitChanged(TextView v) {
-        unit = v;
+    public void setValueEnabled(View v) {
+
     }
 }

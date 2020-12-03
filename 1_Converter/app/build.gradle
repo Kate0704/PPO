@@ -24,6 +24,8 @@ android {
         applicationId "ppo.converter"
         minSdkVersion 23
         targetSdkVersion 29
+        versionCode gitVersionCode
+        versionName gitVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.build
