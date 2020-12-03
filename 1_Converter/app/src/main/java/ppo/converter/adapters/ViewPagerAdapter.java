@@ -8,11 +8,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
-import ppo.converter.fragments.LengthFragment;
-import ppo.converter.fragments.MoneyFragment;
-import ppo.converter.fragments.WeightFragment;
+import ppo.converter.R;
+import ppo.converter.ui.fragments.LengthFragment;
+import ppo.converter.ui.fragments.MoneyFragment;
+import ppo.converter.ui.fragments.WeightFragment;
+
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
+
+    private String[] icons;
 
     private Fragment[] fragments = {
             new LengthFragment(),
@@ -20,8 +24,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             new WeightFragment()
     };
 
-    public ViewPagerAdapter(@NonNull FragmentManager fm) {
+    public ViewPagerAdapter(@NonNull FragmentManager fm, String[] icons) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        this.icons = icons;
     }
 
     @Override public int getCount() {
@@ -36,6 +41,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return null;
+        return icons[position];
     }
 }

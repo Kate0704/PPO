@@ -15,8 +15,6 @@
         android:textSize="18dp"
         android:text="Выберите величину"/>
 
-
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"

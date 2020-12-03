@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ppo.converter.activities.ConvertLengthActivity">
+    tools:context=".ui.activities.ConvertLengthActivity">
 
 
     <FrameLayout
@@ -19,30 +19,34 @@
             app:title=" "/>
 
         <TextView
-            android:layout_width="400dp"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Конвертер длины"
             android:textSize="20dp" />
     </FrameLayout>
 
 
-    <include
-        layout="@layout/fragment_conversion"
-        android:layout_weight="8"
+    <fragment
+        android:id="@+id/fragment_conversion"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:name="ppo.converter.ui.fragments.ConversionFragment"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:background="@drawable/separator_line"/>
 
-    <include
-        layout="@layout/num_pad_fragment"
+    <fragment
+        android:id="@+id/num_pad_fragment"
         android:layout_weight="11"
         android:layout_height="0dp"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        android:name="ppo.converter.ui.fragments.NumPadFragment"/>
 
     <TextView
         android:layout_width="match_parent"

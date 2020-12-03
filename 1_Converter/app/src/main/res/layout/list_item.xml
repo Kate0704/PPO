@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<TextView android:id="@android:id/text1"
+    android:textSize="16sp"
+    android:text="@string/app_name"
+    android:paddingTop="20dp"
+    android:paddingLeft="40dp"
+    android:paddingBottom="10dp"
+    android:textColor="@color/colorText"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="20dp">
-
-    <TextView android:id="@android:id/text1"
-        android:textSize="16sp"
-        android:text="@string/app_name"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="20dp"
-        android:textColor="@color/colorTextDark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView android:id="@android:id/text2"
-        android:textSize="16sp"
-        android:text="@string/app_name"
-        android:textColor="@color/colorTextDark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
+    xmlns:android="http://schemas.android.com/apk/res/android" />

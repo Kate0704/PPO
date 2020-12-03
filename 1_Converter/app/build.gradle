@@ -24,26 +24,27 @@ android {
         applicationId "ppo.converter"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode gitVersionCode
-        versionName gitVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.build
     }
 
-    flavorDimensions "stage"
+    flavorDimensions "version"
     productFlavors {
         free {
             versionCode gitVersionCodeTime
             versionName gitVersionName
-            dimension "stage"
-            applicationIdSuffix ".dev"
+            dimension "version"
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
         }
 
         premium {
             versionCode gitVersionCode
             versionName gitVersionName
-            dimension "stage"
+            dimension "version"
+            applicationIdSuffix ".premium"
+            versionNameSuffix "-premium"
         }
     }
 
@@ -59,7 +60,6 @@ android {
         enabled = true
     }
 
-
 }
 
 dependencies {
@@ -74,7 +74,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
 
 
     implementation 'com.google.android.material:material:1.2.1'
@@ -84,6 +84,10 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.0'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+
+    implementation 'info.androidhive:fontawesome:0.0.5'
 }

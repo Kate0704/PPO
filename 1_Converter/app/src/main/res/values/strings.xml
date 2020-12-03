@@ -1,6 +1,64 @@
 <resources>
     <string name="app_name">Converter</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="length">
+        <item>Километры	км 1000</item>
+        <item>Метры	м 1</item>
+        <item>Дециметры	дм 0.1</item>
+        <item>Сантиметры см 0.01</item>
+        <item>Миллиметры мм 0.001</item>
+        <item>Микрометры μm 1.0e-06</item>
+        <item>Нанометры	нм 1.0e-09</item>
+        <item>Пикометры	пм 1.0e-12</item>
+        <item>Морские мили nmi 1852</item>
+        <item>Мили mi 1609.344</item>
+        <item>Фурлонги fur 201.168</item>
+        <item>Морские сажени ftm 1.8288</item>
+        <item>Ярды ярд 0.9144</item>
+        <item>Футы ft 0.3048</item>
+        <item>Дюймы	in 0.0254</item>
+        <item>Ли li 500</item>
+        <item>Чжан zhang 3.33333333</item>
+        <item>Чи chi 0.333333333</item>
+        <item>Цунь cun 0.0333333333</item>
+        <item>Фэнь fen 0.00333333333</item>
+        <item>Лунное расстояние	ld 384401000</item>
+        <item>Световой год ly 9.46073047e+15</item>
+    </string-array>
+
+    <string-array name="area">
+        <item>Квадратные километры км² 1000000.0</item>
+        <item>Гектары ha 10000.0</item>
+        <item>Ары а 100.0</item>
+        <item>Квадратные метры м² 1.0</item>
+        <item>Квадратные дециметры дм² 0.01</item>
+        <item>Квадратные сантиметры	см² 0.001</item>
+        <item>Квадратные миллиметры	мм² 1.0e-06</item>
+        <item>Квадратные микроны мкм² 1.0e-12</item>
+        <item>Акры ac 4046.856</item>
+        <item>Квадратные мили миля² 2589988.11</item>
+        <item>Квадратные ярды ярд² 0.83612736</item>
+        <item>Квадратные футы фут² 0.09290304</item>
+        <item>Квадратные дюймы дюйм² 0.00064516</item>
+        <item>Квадратные перчи rd² 25.2928526</item>
+        <item>Цин qing 66666.6667</item>
+        <item>Квадратные чи	chi² 0.111111111</item>
+        <item>Квадратные цунь cun² 0.00111111111</item>
+    </string-array>
+
+    <string-array name="volume">
+        <item>Кубические метры м³ 1.0</item>
+        <item>Кубические дециметры	дм³	0.001</item>
+        <item>Кубические сантиметры	см³	1.0e-06</item>
+        <item>Кубические миллиметры	мм³	1.0e-09</item>
+        <item>Гектолитры	hl	0.1</item>
+        <item>Литры	l	0.001</item>
+        <item>Децилитры	dl	0.0001</item>
+        <item>Сантилитры	cl	1.0e-05</item>
+        <item>Миллилитры	ml	1.0e-06</item>
+        <item>Кубические футы	ft³	0.0283168466</item>
+        <item>Кубические дюймы	in³	1.6387064e-05</item>
+        <item>Кубические ярды	yd³	0.764554858</item>
+        <item>Акр-фут	af³	1234.0</item>
+    </string-array>
 </resources>

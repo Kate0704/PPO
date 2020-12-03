@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="@integer/config_navAnimTime"
+    android:exitFadeDuration="@integer/config_navAnimTime">
     <item android:state_pressed="true">
-        <shape
-            android:shape="oval">
-            <size android:width="30dp" android:height="30dp"/>
-            <solid android:color="#52D58EFF"/>
-            <stroke android:width="20dp" android:color="@color/colorPrimary"/>
-        </shape>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" >
+                    <solid android:color="@color/colorPrimary"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/num_clicked"/>
+        </layer-list>
     </item>
 
     <item android:state_pressed="false">

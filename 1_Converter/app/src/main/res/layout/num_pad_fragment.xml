@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/NumPad"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ppo.converter.NumPadFragment"
-    android:layout_marginTop="350dp"
+    tools:context=".ui.fragments.NumPadFragment"
     android:orientation="horizontal">
 
 
@@ -20,12 +18,15 @@
             android:layout_weight="1">
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="7"/>
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="8"/>
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="9"/>
         </TableRow>
 
@@ -35,12 +36,15 @@
             android:layout_weight="1">
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="4" />
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="5"/>
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="6"/>
         </TableRow>
 
@@ -50,12 +54,15 @@
             android:layout_weight="1">
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="1"/>
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="2"/>
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="3"/>
         </TableRow>
 
@@ -69,10 +76,12 @@
                 android:background="@color/colorPrimary"/>
             <Button
                 style="@style/NumberStyle"
+                android:onClick="numOnClick"
                 android:text="0"/>
             <Button
                 style="@style/NumberStyle"
-                android:text=","/>
+                android:onClick="numOnClick"
+                android:text="."/>
         </TableRow>
     </TableLayout>
 
@@ -83,21 +92,26 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/AC"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/delete_clicked_border"
+            android:onClick="AC"
             android:text="AC"
             android:textSize="24dp"
-            android:textColor="@color/colorText"/>
+            android:textColor="@color/colorAccent">
+        </Button>
 
         <ImageButton
+            android:id="@+id/delete"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="delete"
             android:background="@drawable/delete_clicked_border"
-            android:src="@android:drawable/ic_input_delete" />
+            android:src="@drawable/ic_backspace" />
     </TableLayout>
 
 </LinearLayout>

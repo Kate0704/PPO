@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.ConvertLengthActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title=" "/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <fragment
+            android:id="@+id/fragment_conversion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_marginTop="30dp"
+            android:name="ppo.converter.ui.fragments.ConversionFragment"/>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            android:background="#2AF5F5F5" />
+
+        <fragment
+            android:id="@+id/num_pad_fragment"
+            android:layout_weight="11"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:name="ppo.converter.ui.fragments.NumPadFragment"/>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#2AF5F5F5" />
+    </LinearLayout>
+
+</LinearLayout>
