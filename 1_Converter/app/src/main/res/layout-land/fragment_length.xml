@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
@@ -9,67 +10,60 @@
 
     <LinearLayout
         android:id="@+id/length_button"
-        android:layout_width="150dp"
-        android:layout_height="115dp"
+        style="@style/ButtonClickableStyle"
         android:background="@drawable/button_clicked_border"
-        android:layout_marginEnd="70dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginEnd="@dimen/length_fragment_margin_between_btns_land">
 
         <ImageView
             android:layout_width="54dp"
             android:layout_height="54dp"
-            android:src="@drawable/ic_length" />
+            android:src="@drawable/ic_length"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Length"
-            android:textSize="20dp" />
+            android:text="@string/length"
+            android:textSize="@dimen/length_fragment_btn_text_size" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/area_button"
-        android:layout_width="150dp"
-        android:layout_height="115dp"
-        android:layout_marginRight="70dp"
-        android:background="@drawable/button_clicked_border"
-        android:gravity="center"
-        android:orientation="vertical">
+        style="@style/ButtonClickableStyle"
+        android:layout_marginEnd="@dimen/length_fragment_margin_between_btns_land"
+        android:background="@drawable/button_clicked_border">
 
         <ImageView
             android:layout_width="47dp"
             android:layout_height="45dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_area" />
+            android:layout_marginBottom="@dimen/icon_text_margin"
+            android:src="@drawable/ic_area"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Area"
-            android:textSize="20dp" />
+            android:text="@string/area"
+            android:textSize="@dimen/length_fragment_btn_text_size" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/volume_button"
-        android:layout_width="150dp"
-        android:layout_height="115dp"
-        android:background="@drawable/button_clicked_border"
-        android:gravity="center"
-        android:orientation="vertical">
+        style="@style/ButtonClickableStyle"
+        android:background="@drawable/button_clicked_border">
 
         <ImageView
             android:layout_width="54dp"
             android:layout_height="46dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/icon_text_margin"
             android:background="@drawable/ic_volume"
-            android:elevation="2dp" />
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volume"
-            android:textSize="20dp" />
+            android:text="@string/volume"
+            android:textSize="@dimen/length_fragment_btn_text_size" />
 
     </LinearLayout>
 

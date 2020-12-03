@@ -23,30 +23,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="20dp" />
+            android:textSize="@dimen/toolbar_text" />
     </FrameLayout>
 
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_conversion"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
-        android:name="ppo.converter.ui.fragments.ConversionFragment"/>
+        android:name="ppo.converter.ui.fragments.conversion.ConversionFragment"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginRight="@dimen/separator_line_margin"
+        android:layout_marginLeft="@dimen/separator_line_margin"
         android:background="@drawable/separator_line"/>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/num_pad_fragment"
         android:layout_weight="11"
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:name="ppo.converter.ui.fragments.NumPadFragment"/>
+        android:name="ppo.converter.ui.fragments.conversion.NumPadFragment"/>
 
     <TextView
         android:layout_width="match_parent"

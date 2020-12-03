@@ -2,4 +2,28 @@
 <resources>
     <dimen name="dialog_height">700dp</dimen>
     <dimen name="dialog_width">395dp</dimen>
+    <dimen name="time_fragment_text_size">25sp</dimen>
+    <dimen name="toolbar_text">20sp</dimen>
+    <dimen name="tabLayout_margin">30dp</dimen>
+    <dimen name="unit_margin_right">5dp</dimen>
+    <dimen name="unit_short_size">25sp</dimen>
+    <dimen name="space_between_unit_and_value">25dp</dimen>
+    <dimen name="textview_value_size">250dp</dimen>
+    <dimen name="value_text_size">28sp</dimen>
+    <dimen name="unit_full_size">12sp</dimen>
+    <dimen name="space_between_units">50dp</dimen>
+    <dimen name="dialog_margin">25dp</dimen>
+    <dimen name="dialog_title_text_size">18sp</dimen>
+    <dimen name="length_fragment_btn_width">150dp</dimen>
+    <dimen name="length_fragment_btn_height">115dp</dimen>
+    <dimen name="length_fragment_margin_between_btns">80dp</dimen>
+    <dimen name="length_fragment_btn_text_size">20sp</dimen>
+    <dimen name="icon_text_margin">10dp</dimen>
+    <dimen name="length_fragment_margin_between_btns_land">70dp</dimen>
+    <dimen name="ac_text_size">24sp</dimen>
+    <dimen name="dialog_item_text_size">16sp</dimen>
+    <dimen name="dialog_item_padding_top">20dp</dimen>
+    <dimen name="dialog_item_padding_left">40dp</dimen>
+    <dimen name="dialog_item_padding_bottom">10dp</dimen>
+    <dimen name="separator_line_margin">30dp</dimen>
 </resources>

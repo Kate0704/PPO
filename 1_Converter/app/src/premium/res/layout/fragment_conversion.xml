@@ -5,16 +5,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top"
-    android:paddingTop="30dp"
-    tools:context=".ui.fragments.ConversionFragment">
+    android:padding="40dp"
+    tools:context=".ui.fragments.conversion.ConversionFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="30dp"
-        android:gravity="center"
-        android:layout_marginRight="30dp">
+        android:gravity="center">
 
         <LinearLayout
             android:id="@+id/dimen1"
@@ -27,8 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:textSize="25dp" />
+                android:layout_marginEnd="@dimen/unit_margin_right"
+                android:textSize="@dimen/unit_short_size" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -37,47 +35,47 @@
         </LinearLayout>
 
         <Space
-            android:layout_width="35dp"
+            android:layout_width="@dimen/space_between_unit_and_value"
             android:layout_height="wrap_content"
-            android:layout_weight="0" />
+            android:layout_weight="0"
+            tools:ignore="InefficientWeight" />
 
         <LinearLayout
             android:id="@+id/number1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text1"
-                android:layout_width="250dp"
+                android:layout_width="@dimen/textview_value_size"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="1"
-                android:textSize="28dp"
+                android:gravity="end"
+                android:text="@string/_1"
+                android:textSize="@dimen/value_text_size"
                 android:longClickable="true"/>
 
             <TextView
                 android:id="@+id/unit1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp" />
+                android:textSize="@dimen/unit_full_size" />
         </LinearLayout>
 
     </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="0" />
+        android:layout_height="@dimen/space_between_units"
+        android:layout_weight="0"
+        tools:ignore="InefficientWeight" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="30dp"
-        android:gravity="center"
-        android:layout_marginRight="30dp">
+        android:gravity="center">
 
         <LinearLayout
             android:id="@+id/dimen2"
@@ -90,8 +88,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:textSize="25dp" />
+                android:layout_marginEnd="@dimen/unit_margin_right"
+                android:textSize="@dimen/unit_short_size" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -100,31 +98,32 @@
         </LinearLayout>
 
         <Space
-            android:layout_width="35dp"
+            android:layout_width="@dimen/space_between_unit_and_value"
             android:layout_height="wrap_content"
-            android:layout_weight="0" />
+            android:layout_weight="0"
+            tools:ignore="InefficientWeight" />
 
         <LinearLayout
             android:id="@+id/number2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text2"
-                android:layout_width="250dp"
+                android:layout_width="@dimen/textview_value_size"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="1"
-                android:textSize="28dp"
+                android:gravity="end"
+                android:text="@string/_1"
+                android:textSize="@dimen/value_text_size"
                 android:longClickable="true"/>
 
             <TextView
                 android:id="@+id/unit2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"/>
+                android:textSize="@dimen/unit_full_size"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

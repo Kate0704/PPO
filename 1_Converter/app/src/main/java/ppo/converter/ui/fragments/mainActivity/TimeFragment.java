@@ -1,4 +1,4 @@
-package ppo.converter.ui.fragments;
+package ppo.converter.ui.fragments.mainActivity;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,17 +9,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import ppo.converter.R;
-import ppo.converter.databinding.FragmentMoneyBinding;
+import ppo.converter.databinding.FragmentTimeBinding;
 
 
 public class TimeFragment extends Fragment {
 
     @Override public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                        Bundle savedInstanceState) {
-        FragmentMoneyBinding binding = FragmentMoneyBinding.inflate(getLayoutInflater());
+        FragmentTimeBinding binding = FragmentTimeBinding.inflate(getLayoutInflater());
         Typeface typeFaceFont = Typeface.createFromAsset(getActivity().getAssets(), "fa_solid.ttf");
         String text = binding.timeFragmentText.getText().toString()
                 + getString(R.string.fa_grin_beam_solid) + " "

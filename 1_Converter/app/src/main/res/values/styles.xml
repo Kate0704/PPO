@@ -35,4 +35,11 @@
         <item name="android:background">@drawable/number_clicked_border</item>
     </style>
 
+    <style name="ButtonClickableStyle">
+        <item name="android:layout_width">@dimen/length_fragment_btn_width</item>
+        <item name="android:layout_height">@dimen/length_fragment_btn_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
 </resources>

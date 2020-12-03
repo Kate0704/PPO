@@ -1,5 +1,23 @@
 <resources>
     <string name="app_name">Converter</string>
+    <string name="weight_fragment_text">Will be available \n\nin the next\n\n version\n\n</string>
+    <string name="choose_unit">Choose unit</string>
+    <string name="length">Length</string>
+    <string name="area">Area</string>
+    <string name="volume">Volume</string>
+    <string name="cancel">Cancel</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_0">0</string>
+    <string name="dot">.</string>
+    <string name="ac">AC</string>
 
     <string-array name="length">
         <item>Километры	км 1000</item>

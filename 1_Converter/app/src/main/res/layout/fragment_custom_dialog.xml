@@ -10,10 +10,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/dialog_margin"
         android:gravity="center"
-        android:textSize="18dp"
-        android:text="Выберите величину"/>
+        android:textSize="@dimen/dialog_title_text_size"
+        android:text="@string/choose_unit"/>
 
     <ListView
         android:id="@+id/listView"
@@ -25,13 +25,13 @@
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="@dimen/dialog_margin"
+        android:layout_marginRight="@dimen/dialog_margin"
+        android:layout_marginBottom="@dimen/dialog_margin"
         android:textColor="@color/colorTextDark"
         style="@style/Widget.AppCompat.ActionButton"
         android:background="@drawable/button_cancel"
-        android:text="Отмена"/>
+        android:text="@string/cancel"/>
 
 
 </LinearLayout>

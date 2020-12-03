@@ -8,9 +8,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
-import ppo.converter.ui.fragments.LengthFragment;
-import ppo.converter.ui.fragments.TimeFragment;
-import ppo.converter.ui.fragments.WeightFragment;
+import ppo.converter.ui.fragments.mainActivity.LengthFragment;
+import ppo.converter.ui.fragments.mainActivity.TimeFragment;
+import ppo.converter.ui.fragments.mainActivity.WeightFragment;
 
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {

@@ -1,4 +1,4 @@
-package ppo.converter.ui.fragments;
+package ppo.converter.ui.fragments.mainActivity;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ppo.converter.R;
-import ppo.converter.databinding.FragmentMoneyBinding;
 import ppo.converter.databinding.FragmentWeightBinding;
 
 

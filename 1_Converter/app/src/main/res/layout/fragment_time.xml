@@ -13,7 +13,9 @@
         android:background="@drawable/button_clicked_border"
         android:gravity="center"
         android:clickable="true"
-        android:text="Will be available \n\nin the next\n\n version\n\n"
-        android:textSize="25dp" />
+        android:textColor="@color/colorTextDark"
+        android:text="@string/weight_fragment_text"
+        android:textSize="@dimen/time_fragment_text_size"
+        android:focusable="true" />
 
 </LinearLayout>
