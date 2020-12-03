@@ -1,32 +1,23 @@
 package ppo.converter.viewModels;
 
-import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import java.sql.Array;
+import java.text.DecimalFormat;
 import java.util.Arrays;
-import java.util.Objects;
+import java.util.Locale;
 
 import ppo.converter.R;
+
 
 public class ConversionViewModel extends ViewModel {
     static String[] units;
     static double[] coeffs;
     MutableLiveData<String> input = new MutableLiveData<String>("");
-
-    public MutableLiveData<String> getInputValue(){
-        return input;
-    }
-    public String[] getUnits() { return units; }
-
-    public String getUnitShort(String s) { return s.substring(s.lastIndexOf(" ") + 1); }
-    public String getUnitFull(String s) { return s.substring(0, s.lastIndexOf(" ")); }
 
     public ConversionViewModel(Resources res, String title){
         if (title.equals("Length converter"))
@@ -41,6 +32,13 @@ public class ConversionViewModel extends ViewModel {
             units[i] = units[i].substring(0, units[i].lastIndexOf(" "));
         }
     }
+
+    public MutableLiveData<String> getInputValue(){
+        return input;
+    }
+    public String[] getUnits() { return units; }
+    public String getUnitShort(String s) { return s.substring(s.lastIndexOf(" ") + 1); }
+    public String getUnitFull(String s) { return s.substring(0, s.lastIndexOf(" ")); }
 
     public void inputValue(View view){
         if (view instanceof Button) {
@@ -60,7 +58,11 @@ public class ConversionViewModel extends ViewModel {
 
     public String convert(double val, String from, String to) {
         int i = Arrays.asList(units).indexOf(from), j = Arrays.asList(units).indexOf(to);
-        return String.valueOf(val * coeffs[i] / coeffs[j]);
+        Double res = val * coeffs[i] / coeffs[j];
+        if (res > 1e7)
+            return String.format(Locale.ENGLISH, "%.7e", res);
+        DecimalFormat decimalFormat = new DecimalFormat("#.########");
+        return decimalFormat.format(res);
     }
 
     public void AC(){
@@ -72,9 +74,5 @@ public class ConversionViewModel extends ViewModel {
             input.setValue("0");
         else
             input.setValue(input.getValue().substring(0, input.getValue().length() - 1));
-    }
-
-    public void setValueEnabled(View v) {
-
     }
 }

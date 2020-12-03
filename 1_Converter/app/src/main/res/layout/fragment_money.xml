@@ -1,66 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:gravity="center"
     android:layout_margin="30dp">
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="187dp"
-        android:layout_height="131dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="34dp"
-        android:background="@color/colorPrimarySurface"
-        app:srcCompat="@drawable/ic_length"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="187dp"
-        android:layout_height="131dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="375dp"
-        android:background="@color/colorPrimarySurface"
-        app:srcCompat="@drawable/ic_length"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
     <TextView
-        android:layout_width="187dp"
+        android:id="@+id/timeFragmentText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="41dp"
-        android:background="@color/colorPrimarySurface"
+        android:padding="30dp"
+        android:background="@drawable/button_clicked_border"
         android:gravity="center"
-        android:text="Money"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        android:clickable="true"
+        android:text="Will be available \n\nin the next\n\n version\n\n"
+        android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="331dp"
-        android:background="@color/colorPrimarySurface"
-        android:gravity="center"
-        android:text="%%%"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

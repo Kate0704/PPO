@@ -2,7 +2,6 @@ package ppo.converter.ui.custom;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,18 +18,12 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModelProviders;
 
 import ppo.converter.R;
-import ppo.converter.databinding.FragmentConversionBinding;
 import ppo.converter.databinding.FragmentCustomDialogBinding;
-import ppo.converter.ui.activities.ConvertLengthActivity;
-import ppo.converter.ui.fragments.ConversionFragment;
-import ppo.converter.viewModels.ConversionViewModel;
 
+@SuppressWarnings("rawtypes")
 public class UnitPickerListDialog extends DialogFragment {
 
     String[] units;
@@ -72,16 +65,14 @@ public class UnitPickerListDialog extends DialogFragment {
         Intent intent = new Intent();
         intent.putExtra("DIALOG_DISMISSED", 404);
         if (getTargetFragment().getActivity() != null)
-        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+            getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
         ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.list_item, units);
         binding.listView.setAdapter(adapter);
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(view);
         setAppearance();

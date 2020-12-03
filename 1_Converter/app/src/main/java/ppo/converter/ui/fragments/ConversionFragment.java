@@ -35,8 +35,8 @@ import ppo.converter.viewModels.ModelFactory;
 
 public class ConversionFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
-    private FragmentConversionBinding binding;
-    private ConversionViewModel mViewModel;
+    FragmentConversionBinding binding;
+    ConversionViewModel mViewModel;
     UnitPickerListDialog myDialogFragment;
     TextView valueSelected, unitSelected;
 
@@ -93,11 +93,10 @@ public class ConversionFragment extends Fragment implements View.OnClickListener
     }
 
     void initViews() {
-        String unit = mViewModel.getUnits()[0];
-        binding.listbtn1.setText(unit.substring(unit.lastIndexOf(" ") + 1));
-        binding.listbtn2.setText(unit.substring(unit.lastIndexOf(" ") + 1));
-        binding.unit1.setText(unit.substring(0, unit.lastIndexOf(" ")));
-        binding.unit2.setText(unit.substring(0, unit.lastIndexOf(" ")));
+        binding.listbtn1.setText(mViewModel.getUnitShort(mViewModel.getUnits()[0]));
+        binding.listbtn2.setText(mViewModel.getUnitShort(mViewModel.getUnits()[0]));
+        binding.unit1.setText(mViewModel.getUnitFull(mViewModel.getUnits()[0]));
+        binding.unit2.setText(mViewModel.getUnitFull(mViewModel.getUnits()[0]));
         valueSelected = binding.text1;
         binding.text1.setTextColor(getResources().getColor(R.color.colorAccent));
     }

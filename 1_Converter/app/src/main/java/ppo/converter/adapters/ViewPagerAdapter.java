@@ -8,9 +8,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
-import ppo.converter.R;
 import ppo.converter.ui.fragments.LengthFragment;
-import ppo.converter.ui.fragments.MoneyFragment;
+import ppo.converter.ui.fragments.TimeFragment;
 import ppo.converter.ui.fragments.WeightFragment;
 
 
@@ -20,7 +19,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private Fragment[] fragments = {
             new LengthFragment(),
-            new MoneyFragment(),
+            new TimeFragment(),
             new WeightFragment()
     };
 

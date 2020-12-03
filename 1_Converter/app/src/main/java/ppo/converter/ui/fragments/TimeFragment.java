@@ -9,24 +9,25 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import ppo.converter.R;
 import ppo.converter.databinding.FragmentMoneyBinding;
-import ppo.converter.databinding.FragmentWeightBinding;
 
 
-public class WeightFragment extends Fragment {
+public class TimeFragment extends Fragment {
 
     @Override public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                        Bundle savedInstanceState) {
-        FragmentWeightBinding binding = FragmentWeightBinding.inflate(getLayoutInflater());
+        FragmentMoneyBinding binding = FragmentMoneyBinding.inflate(getLayoutInflater());
         Typeface typeFaceFont = Typeface.createFromAsset(getActivity().getAssets(), "fa_solid.ttf");
-        String text = binding.weightFragmentText.getText().toString()
-                + getString(R.string.fa_pastafarianism_solid) + " "
-                + getString(R.string.fa_street_view_solid) + " "
-                + getString(R.string.fa_khanda_solid);
-        binding.weightFragmentText.setText(text);
-        binding.weightFragmentText.setTypeface(typeFaceFont);
+        String text = binding.timeFragmentText.getText().toString()
+                + getString(R.string.fa_grin_beam_solid) + " "
+                + getString(R.string.fa_hand_holding_heart_solid) + " "
+                + getString(R.string.fa_sun_solid);
+        binding.timeFragmentText.setText(text);
+        binding.timeFragmentText.setTypeface(typeFaceFont);
         return binding.getRoot();
     }
+
 }

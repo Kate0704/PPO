@@ -11,32 +11,29 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import ppo.converter.R;
 import ppo.converter.adapters.ViewPagerAdapter;
+import ppo.converter.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Typeface typeFaceFont = Typeface.
-                createFromAsset(getAssets(), "fa_solid.ttf");
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
-        String[] icons = {
-                getString(R.string.fa_arrows_alt_h_solid),
-                getString(R.string.fa_clock_solid),
-                getString(R.string.fa_balance_scale_solid)
-        };
-
-        ViewPager viewPager = findViewById(R.id.viewPager);
+        String[] icons = {getString(R.string.fa_arrows_alt_h_solid), getString(R.string.fa_clock_solid), getString(R.string.fa_balance_scale_solid)};
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), icons);
-        viewPager.setAdapter(adapter);
+        binding.viewPager.setAdapter(adapter);
+        binding.slidingTabs.setupWithViewPager(binding.viewPager);
+        setTabIcons();
 
+        setContentView(binding.getRoot());
+    }
 
-        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
-        tabLayout.setupWithViewPager(viewPager);
-
-        ViewGroup vg = (ViewGroup) tabLayout.getChildAt(0);
+    void setTabIcons(){
+        Typeface typeFaceFont = Typeface.createFromAsset(getAssets(), "fa_solid.ttf");
+        ViewGroup vg = (ViewGroup) binding.slidingTabs.getChildAt(0);
         int tabsCount = vg.getChildCount();
         for (int j = 0; j < tabsCount; j++) {
             ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
@@ -50,12 +47,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-//        int[] imageResId = {
-//                R.drawable.ic_length, R.drawable.ic_money, R.drawable.ic_weight
-//        };
-//
-//        for (int i = 0; i < imageResId.length; i++) {
-//            Objects.requireNonNull(tabLayout.getTabAt(i)).setIcon(imageResId[i]);
-//        }
