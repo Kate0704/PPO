@@ -35,8 +35,8 @@
             android:id="@+id/fragment_conversion"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="15"
-            android:layout_marginTop="30dp"
+            android:layout_weight="16"
+            android:layout_gravity="center"
             android:name="ppo.converter.ui.fragments.conversion.ConversionFragment"/>
 
         <View
@@ -47,7 +47,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/num_pad_fragment"
-            android:layout_weight="11"
+            android:layout_weight="13"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:name="ppo.converter.ui.fragments.conversion.NumPadFragment"/>

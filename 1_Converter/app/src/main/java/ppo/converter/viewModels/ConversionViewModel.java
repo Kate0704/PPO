@@ -33,9 +33,7 @@ public class ConversionViewModel extends ViewModel {
         }
     }
 
-    public MutableLiveData<String> getInputValue(){
-        return input;
-    }
+    public MutableLiveData<String> getInputValue(){ return input; }
     public String[] getUnits() { return units; }
     public String getUnitShort(String s) { return s.substring(s.lastIndexOf(" ") + 1); }
     public String getUnitFull(String s) { return s.substring(0, s.lastIndexOf(" ")); }
@@ -58,8 +56,8 @@ public class ConversionViewModel extends ViewModel {
 
     public String convert(double val, String from, String to) {
         int i = Arrays.asList(units).indexOf(from), j = Arrays.asList(units).indexOf(to);
-        Double res = val * coeffs[i] / coeffs[j];
-        if (res > 1e7)
+        double res = val * coeffs[i] / coeffs[j];
+        if (res > 1e7 || res < 1e-6)
             return String.format(Locale.ENGLISH, "%.7e", res);
         DecimalFormat decimalFormat = new DecimalFormat("#.########");
         return decimalFormat.format(res);

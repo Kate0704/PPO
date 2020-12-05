@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dialog_height">700dp</dimen>
+    <dimen name="dialog_height_land">350dp</dimen>
     <dimen name="dialog_width">395dp</dimen>
     <dimen name="time_fragment_text_size">25sp</dimen>
     <dimen name="toolbar_text">20sp</dimen>
     <dimen name="tabLayout_margin">30dp</dimen>
     <dimen name="unit_margin_right">5dp</dimen>
-    <dimen name="unit_short_size">25sp</dimen>
-    <dimen name="space_between_unit_and_value">25dp</dimen>
+    <dimen name="unit_short_size">22sp</dimen>
+    <dimen name="space_between_unit_and_value">1dp</dimen>
     <dimen name="textview_value_size">250dp</dimen>
     <dimen name="value_text_size">28sp</dimen>
     <dimen name="unit_full_size">12sp</dimen>

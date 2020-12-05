@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -80,7 +81,9 @@ public class UnitPickerListDialog extends DialogFragment {
 
     void setAppearance(){
         Window window = getDialog().getWindow();
-        window.setLayout(getResources().getDimensionPixelSize(R.dimen.dialog_width), getResources().getDimensionPixelSize(R.dimen.dialog_height));
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            window.setLayout(getResources().getDimensionPixelSize(R.dimen.dialog_width), getResources().getDimensionPixelSize(R.dimen.dialog_height_land));
+        else window.setLayout(getResources().getDimensionPixelSize(R.dimen.dialog_width), getResources().getDimensionPixelSize(R.dimen.dialog_height));
         window.setGravity(Gravity.BOTTOM);
         view.setBackgroundResource(R.drawable.dialog_shape);
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
