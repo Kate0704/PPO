@@ -8,13 +8,6 @@ import kotlinx.coroutines.launch
 class TabataViewModel(private val repo: TabataRepository) : ViewModel() {
     val allTabatas: LiveData<List<TabataEntity>> = repo.allTabatas
 
-    init {
-//        val db = TabataDatabase.buildDatabase(application, viewModelScope)
-//        val programDao = db.programDao()
-//        repo = TabataRepository(tabataDao)
-//        allTabatas = repo.allTabatas
-    }
-
     fun insertTabata(tabata: TabataEntity) = viewModelScope.launch(Dispatchers.IO){
         repo.insertTabata(tabata)
     }

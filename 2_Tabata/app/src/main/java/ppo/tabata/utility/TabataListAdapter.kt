@@ -12,18 +12,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ppo.tabata.R
 import ppo.tabata.data.TabataEntity
+import ppo.tabata.databinding.RecyclerviewItemBinding
 
-class TabataListAdapter internal constructor(
-    context: Context
-) : ListAdapter<TabataEntity, TabataListAdapter.TabataViewHolder>(TabataComparator()) {
+class TabataListAdapter : ListAdapter<TabataEntity, TabataListAdapter.TabataViewHolder>(TabataComparator()) {
 
-    public val mContext: Context = context
-
+    private companion object {lateinit var binding: RecyclerviewItemBinding}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TabataViewHolder {
-        val view: View = LayoutInflater.from(mContext)
-            .inflate(R.layout.recyclerview_item, parent, false)
-        return TabataViewHolder(view)
+        return TabataViewHolder.create(parent)
     }
 
     override fun onBindViewHolder(holder: TabataViewHolder, position: Int) {
@@ -32,20 +28,18 @@ class TabataListAdapter internal constructor(
     }
 
     class TabataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tabataItemView: TextView = itemView.findViewById(R.id.textView)
 
         fun bind(name: String?, color: String?) {
-            tabataItemView.text = name
-            tabataItemView.setBackgroundColor(Color.parseColor(color))
+            binding.textView.text = name
+            binding.itemColor.setBackgroundColor(Color.parseColor(color))
         }
 
-//        companion object {
-//            fun create(parent: ViewGroup): TabataViewHolder {
-//                val view: View = LayoutInflater.from(mContext)
-//                    .inflate(R.layout.recyclerview_item, parent, false)
-//                return TabataViewHolder(view)
-//            }
-//        }
+        companion object {
+            fun create(parent: ViewGroup): TabataViewHolder {
+                binding = RecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context))
+                return TabataViewHolder(binding.root)
+            }
+        }
     }
 
     class TabataComparator : DiffUtil.ItemCallback<TabataEntity>() {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Табата таймер</string>
+    <string name="action_settings">Настройки</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="save">Сохранить</string>
+
+
+    <string name="warm_up">Разминка</string>
+    <string name="work">Упражнения</string>
+    <string name="rest">Отдых</string>
+    <string name="repeats">Повторы</string>
+    <string name="cycles">Циклы</string>
+    <string name="cooldown">Отдых после цикла</string>
+    <string name="tabata_color">Цвет</string>
+
+</resources>
