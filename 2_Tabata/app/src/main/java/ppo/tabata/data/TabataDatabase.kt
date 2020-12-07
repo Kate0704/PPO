@@ -54,7 +54,7 @@ abstract class TabataDatabase : RoomDatabase() {
             tabataDao.clear()
 
             val tabata = TabataEntity(
-                1, "Test tabata", "#007372", 5,
+                 "Test tabata", 0, 5,
                 5, 5, 3, 2, 5)
             tabataDao.insertTabata(tabata)
         }

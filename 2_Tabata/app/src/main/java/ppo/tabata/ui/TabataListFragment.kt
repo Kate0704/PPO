@@ -41,6 +41,7 @@ class TabataListFragment : Fragment() {
         val adapter = TabataListAdapter()
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
+
         tabataViewModel.allTabatas.observe(viewLifecycleOwner, Observer { words ->
             words?.let { adapter.submitList(it) }
         })

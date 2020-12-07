@@ -8,9 +8,8 @@ import java.io.Serializable
 
 @Entity
 data class TabataEntity(
-    @PrimaryKey(autoGenerate = true) var id: Int,
     var name: String,
-    var color: String,
+    var color: Int,
     var warm_up: Int,
     var work: Int,
     var rest: Int,
@@ -18,3 +17,6 @@ data class TabataEntity(
     var cycles: Int,
     var cooldown:Int
 ) : Serializable
+{
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+}

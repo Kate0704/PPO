@@ -268,12 +268,17 @@
                 android:padding="5dp">
 
                 <androidx.cardview.widget.CardView
+                    android:layout_margin="5dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:elevation="6dp"
                     android:layout_gravity="center"
-                    app:cardBackgroundColor="@color/colorSecondaryLight"
-                    app:cardPreventCornerOverlap="true"
-                    app:cardCornerRadius="30dp"/>
+                    android:id="@+id/select_color"
+                    app:cardCornerRadius="25dp"
+                    android:innerRadius="0dp"
+                    android:shape="ring"
+                    android:thicknessRatio="1.9"
+                    app:cardBackgroundColor="@color/colorSecondaryLight" />
             </FrameLayout>
 
         </TableRow>
