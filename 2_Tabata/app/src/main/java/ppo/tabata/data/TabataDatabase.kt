@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import ppo.tabata.R
 
-@Database(entities = [TabataEntity::class], version = 1, exportSchema = false)
+@Database(entities = [TabataEntity::class], version = 2, exportSchema = false)
 abstract class TabataDatabase : RoomDatabase() {
 
     abstract fun tabataDao(): TabataDAO

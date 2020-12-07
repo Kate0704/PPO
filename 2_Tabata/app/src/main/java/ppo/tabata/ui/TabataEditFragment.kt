@@ -1,30 +1,30 @@
 package ppo.tabata.ui
 
+import android.R.attr.button
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.annotation.NonNull
-import com.jaredrummler.android.colorpicker.ColorPickerDialog
+import androidx.core.graphics.drawable.toBitmap
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.MutableLiveData
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.jaredrummler.android.colorpicker.ColorPickerDialogListener
+import com.jaredrummler.android.colorpicker.ColorPickerDialog
 import com.jaredrummler.android.colorpicker.ColorShape
 import ppo.tabata.R
-import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.FragmentTabataEditBinding
 
 
 class TabataEditFragment : Fragment(){
 
     private lateinit var binding: FragmentTabataEditBinding
-    private lateinit var viewModel: EditTabataViewModel
+    private val viewModel by activityViewModels<EditTabataViewModel>()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -36,28 +36,30 @@ class TabataEditFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(EditTabataViewModel::class.java)
-
 
         binding.buttonSave.setOnClickListener {
-            val newTabata = TabataEntity(binding.tabataTitle.text.toString(), viewModel.color.value!!,
-            binding.wa)
+//            val newTabata =
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
         binding.selectColor.setOnClickListener{
-            createColorPickerDialog(1)
+            createColorPickerDialog()
         }
+
+        viewModel.currentColor().observe(viewLifecycleOwner, Observer<Int> {
+            val col = it
+            binding.selectColor.setBackgroundColor(col)
+        })
     }
 
-    private fun createColorPickerDialog(id: Int){
+    private fun createColorPickerDialog(){
+        val color = binding.selectColor.background
         ColorPickerDialog.newBuilder()
                 .setDialogType(ColorPickerDialog.TYPE_CUSTOM)
-                .setColor(Color.GREEN)
+                .setColor(viewModel.currentColor().value!!)
                 .setAllowCustom(true)
                 .setAllowPresets(true)
                 .setColorShape(ColorShape.SQUARE)
-                .setDialogId(id)
                 .show(context as? FragmentActivity)
     }
 }

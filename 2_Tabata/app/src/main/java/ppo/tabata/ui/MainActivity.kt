@@ -1,11 +1,15 @@
 package ppo.tabata.ui
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener
 import ppo.tabata.R
 import ppo.tabata.databinding.ActivityMainBinding
@@ -38,8 +42,8 @@ class MainActivity : AppCompatActivity(), ColorPickerDialogListener {
     override fun onDialogDismissed(dialogId: Int) {}
 
     override fun onColorSelected(dialogId: Int, color: Int) {
-        viewModel.color.value = color
-        val v = findViewById<CardView>(R.id.select_color)
-        v.setCardBackgroundColor(color)
+        viewModel.updateColor(color)
+//        val v = findViewById<Button>(R.id.select_color)
+//        v.setBackgroundColor(color)
     }
 }

@@ -29,9 +29,9 @@ class TabataListAdapter : ListAdapter<TabataEntity, TabataListAdapter.TabataView
 
     class TabataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(name: String?, color: String?) {
+        fun bind(name: String, color: Int) {
             binding.textView.text = name
-            binding.itemColor.setBackgroundColor(Color.parseColor(color))
+            binding.itemColor.setBackgroundColor(color)
         }
 
         companion object {

@@ -261,25 +261,18 @@
                 android:gravity="center|start"
                 android:text="@string/tabata_color"/>
 
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:padding="5dp">
+                android:gravity="center">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="5dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:elevation="6dp"
-                    android:layout_gravity="center"
+                <Button
                     android:id="@+id/select_color"
-                    app:cardCornerRadius="25dp"
-                    android:innerRadius="0dp"
-                    android:shape="ring"
-                    android:thicknessRatio="1.9"
-                    app:cardBackgroundColor="@color/colorSecondaryLight" />
-            </FrameLayout>
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#1FC601"/>
+            </LinearLayout>
 
         </TableRow>
 

@@ -42,8 +42,8 @@ class TabataListFragment : Fragment() {
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
 
-        tabataViewModel.allTabatas.observe(viewLifecycleOwner, Observer { words ->
-            words?.let { adapter.submitList(it) }
+        tabataViewModel.allTabatas.observe(viewLifecycleOwner, Observer { tabatas ->
+            tabatas?.let { adapter.submitList(it) }
         })
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
