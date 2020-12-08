@@ -9,10 +9,6 @@ class EditTabataViewModel: ViewModel() {
 
     var color = MutableLiveData<Int>()
 
-    init {
-        updateColor(2082305)
-    }
-
     fun currentColor() = color
     fun updateColor(value: Int) { color.value = value }
 }
