@@ -1,6 +1,7 @@
 package ppo.tabata.data
 
 import android.content.Context
+import android.graphics.Color
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -8,6 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import ppo.tabata.R
+import ppo.tabata.R.color.green_700
 
 @Database(entities = [TabataEntity::class], version = 2, exportSchema = false)
 abstract class TabataDatabase : RoomDatabase() {
@@ -50,12 +52,12 @@ abstract class TabataDatabase : RoomDatabase() {
             }
         }
 
-        suspend fun populateDatabase(tabataDao: TabataDAO) {
+        fun populateDatabase(tabataDao: TabataDAO) {
             tabataDao.clear()
 
             val tabata = TabataEntity(
-                 "Test tabata", 0, 5,
-                5, 5, 3, 2, 5)
+                 "Tabata classic", "#388E3C", 60,
+                20, 10, 4, 2, 15)
             tabataDao.insertTabata(tabata)
         }
     }

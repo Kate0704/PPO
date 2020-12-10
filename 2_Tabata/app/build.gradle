@@ -43,6 +43,13 @@ android {
         viewBinding true
     }
 
+    // Locale helper
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
 }
 
 dependencies {
@@ -58,6 +65,11 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation 'androidx.wear:wear:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    compileOnly 'com.google.android.wearable:wearable:2.8.1'
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
@@ -81,7 +93,9 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
 
     // ColorPickerDialog
-//    implementation 'com.jaredrummler:colorpicker:1.1.0'
     implementation 'com.github.dhaval2404:colorpicker:1.2.1'
+
+    // Locale helper
+    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.1.2'
 
 }

@@ -8,8 +8,9 @@
     <color name="colorSecondary">#ffa000</color>
     <color name="colorSecondaryLight">#A8FFA000</color>
     <color name="textColor">#3e2723</color>
-    <color name="textColorLight">#493936</color>
+    <color name="textColorLight">#53413E</color>
     <color name="colorHighlight">#FF0000</color>
     <color name="listItemBorderColor">#b3bc6d</color>
     <color name="hintColor">#543E2723</color>
+    <color name="btnPlayColor">#FFE76F</color>
 </resources>
