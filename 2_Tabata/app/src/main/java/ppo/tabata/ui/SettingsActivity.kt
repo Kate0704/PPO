@@ -14,8 +14,8 @@ import androidx.preference.PreferenceManager
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
 import com.zeugmasolutions.localehelper.Locales
 import ppo.tabata.R
-import ppo.tabata.data.TabataViewModel
-import ppo.tabata.data.TabataViewModelFactory
+import ppo.tabata.viewModels.TabataViewModel
+import ppo.tabata.viewModels.TabataViewModelFactory
 import ppo.tabata.utility.TabataApp
 
 
@@ -83,7 +83,8 @@ class SettingsActivity : LocaleAwareCompatActivity() {
 
             alertDialog.setPositiveButton(R.string.ok) { _, _ ->
                 val tabataViewModel: TabataViewModel by viewModels {
-                    TabataViewModelFactory((this.application as TabataApp).repository) }
+                    TabataViewModelFactory((this.application as TabataApp).repository)
+                }
                 tabataViewModel.clear()
                 Toast.makeText(context, r.getString(R.string.ok_text), Toast.LENGTH_SHORT).show()
             }

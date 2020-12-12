@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/Background"
-    android:padding="5dp">
+    android:background="@color/Background">
 
 <androidx.cardview.widget.CardView
     android:id="@+id/tabataItemView"
@@ -16,7 +15,10 @@
     android:adjustViewBounds="true"
     app:cardPreventCornerOverlap="true"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+
+    app:cardUseCompatPadding="true"
+    app:cardElevation="8dp">
 
 
     <RelativeLayout
@@ -38,7 +40,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="fill_vertical"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 android:orientation="vertical">
 
                 <LinearLayout

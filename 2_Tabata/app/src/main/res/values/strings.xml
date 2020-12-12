@@ -63,8 +63,10 @@
     <string name="ok_text">Data store is clear</string>
     <string name="no_text">Cancel</string>
     <string name="warning">Warning</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Timer Activity -->
+    <string name="title_activity_timer">Timer</string>
+    <string name="tabata_title_hint">TABATA TITLE</string>
 
 
 </resources>

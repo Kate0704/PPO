@@ -27,7 +27,7 @@ class MainActivity : LocaleAwareCompatActivity(){
         setContentView(binding.root)
         setTitle(R.string.app_name)
 
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val prefs = getDefaultSharedPreferences(this)
         val scale = prefs.getFloat("size_coef", 1F)
         resources.configuration.fontScale = scale
         val metrics = resources.displayMetrics

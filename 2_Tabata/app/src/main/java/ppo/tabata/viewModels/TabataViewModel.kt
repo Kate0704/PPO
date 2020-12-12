@@ -1,9 +1,10 @@
-package ppo.tabata.data
+package ppo.tabata.viewModels
 
-import android.app.Application
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import ppo.tabata.data.TabataEntity
+import ppo.tabata.data.TabataRepository
 
 class TabataViewModel(private val repo: TabataRepository) : ViewModel() {
     val allTabatas: LiveData<List<TabataEntity>> = repo.allTabatas

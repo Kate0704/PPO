@@ -1,5 +1,7 @@
 package ppo.tabata.utility
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -7,37 +9,31 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ppo.tabata.R
 import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.RecyclerviewItemBinding
 import ppo.tabata.ui.EditTabataViewModel
+import ppo.tabata.ui.TimerActivity
 
 class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val clickListener: (TabataEntity) -> Unit)
     : ListAdapter<TabataEntity, TabataListAdapter.TabataViewHolder>(TabataComparator()) {
 
-    private companion object {lateinit var binding: RecyclerviewItemBinding}
+    companion object {lateinit var binding: RecyclerviewItemBinding}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TabataViewHolder {
         binding = RecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context))
-        binding.playButton.setOnClickListener {
-
-        }
         return TabataViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: TabataViewHolder, position: Int) {
-        if (!tabataList.isNullOrEmpty())
-            tabataList?.get(position)?.let { holder.bind(it, clickListener) }
+        tabataList?.get(position)?.let { holder.bind(it, clickListener) }
     }
 
     override fun submitList(list: List<TabataEntity>?) {
         super.submitList(list)
-        if (list != null) {
-            tabataList = list
-        }
+        if (!list.isNullOrEmpty()) { tabataList = list }
     }
 
-    class TabataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TabataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(tabata: TabataEntity, clickListener: (TabataEntity) -> Unit) {
             binding.textView.text = tabata.name
             binding.work.text = EditTabataViewModel.getTime(tabata.work)
@@ -46,6 +42,11 @@ class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val
             binding.cycles.text = tabata.cycles.toString()
             binding.itemColor.setBackgroundColor(Color.parseColor(tabata.color))
             itemView.setOnClickListener { clickListener(tabata) }
+            binding.playButton.setOnClickListener{
+                val intent = Intent(it.context, TimerActivity::class.java)
+                intent.putExtra("tabata", tabataList?.get(adapterPosition))
+                it.context.startActivity(intent)
+            }
         }
     }
 

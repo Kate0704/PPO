@@ -15,8 +15,8 @@ import com.github.dhaval2404.colorpicker.model.ColorSwatch
 //import com.jaredrummler.android.colorpicker.ColorPickerDialog
 //import com.jaredrummler.android.colorpicker.ColorShape
 import ppo.tabata.R
-import ppo.tabata.data.TabataViewModel
-import ppo.tabata.data.TabataViewModelFactory
+import ppo.tabata.viewModels.TabataViewModel
+import ppo.tabata.viewModels.TabataViewModelFactory
 import ppo.tabata.databinding.FragmentTabataEditBinding
 import ppo.tabata.utility.TabataApp
 

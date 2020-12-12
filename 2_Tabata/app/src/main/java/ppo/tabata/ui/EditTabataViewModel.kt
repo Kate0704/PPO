@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ppo.tabata.data.TabataEntity
-import ppo.tabata.data.TabataViewModel
+import ppo.tabata.viewModels.TabataViewModel
 import ppo.tabata.databinding.FragmentTabataEditBinding
 import ppo.tabata.utility.TimeInputFilter
 
@@ -39,16 +39,16 @@ class EditTabataViewModel: ViewModel() {
         binding.selectColor.setBackgroundColor(Color.parseColor(curr.color))
     }
 
-    fun setInputFilters(b: FragmentTabataEditBinding) {
+    fun setInputFilters(binding: FragmentTabataEditBinding) {
         val filters = arrayOf<InputFilter>(TimeInputFilter())
-        b.warmUpMin.filters = filters
-        b.warmUpS.filters = filters
-        b.workMin.filters = filters
-        b.workS.filters = filters
-        b.restMin.filters = filters
-        b.restS.filters = filters
-        b.cooldownMin.filters = filters
-        b.cooldownS.filters = filters
+        binding.warmUpMin.filters = filters
+        binding.warmUpS.filters = filters
+        binding.workMin.filters = filters
+        binding.workS.filters = filters
+        binding.restMin.filters = filters
+        binding.restS.filters = filters
+        binding.cooldownMin.filters = filters
+        binding.cooldownS.filters = filters
     }
 
     fun saveTabata(binding: FragmentTabataEditBinding, viewModel: TabataViewModel) {
@@ -62,9 +62,8 @@ class EditTabataViewModel: ViewModel() {
         val color = java.lang.String.format("#%06X", 0xFFFFFF and (binding.selectColor.background as ColorDrawable).color)
 
         val currTabata = TabataEntity(name, color, warm_up, work, rest, repeats, cycles, cooldown)
-        if(newTabata) {
+        if(newTabata)
             viewModel.insertTabata(currTabata)
-        }
         else {
             currTabata.id = tabata.value!!.id
             viewModel.updateTabata(currTabata)
@@ -72,25 +71,9 @@ class EditTabataViewModel: ViewModel() {
     }
 
     companion object Time {
-
-        fun getTime(time: Int) : String {
-            return getMinutes(time) + ":" + getSec(time)
-        }
-
-        fun getMinutes(time: Int): String {
-            val min: Int = time / 60
-            return addZero(min)
-        }
-
-        fun getSec(time: Int): String {
-            val min: Int = time / 60
-            val sec: Int = time - min * 60
-            return addZero(sec)
-        }
-
-        fun addZero(time: Int): String {
-            if (time < 10) return "0$time"
-            return "$time"
-        }
+        fun getTime(time: Int) : String = (getMinutes(time) + ":" + getSec(time))
+        fun getMinutes(time: Int): String = addZero(time / 60)
+        fun getSec(time: Int): String = addZero(time - (time / 60).toInt() * 60)
+        private fun addZero(time: Int): String = if (time < 10) { "0$time" } else { "$time" }
     }
 }

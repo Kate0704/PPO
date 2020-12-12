@@ -8,7 +8,7 @@
     <string name="next">Next</string>
     <string name="save">Сохранить</string>
 
-
+    <string name="tabata_title_hint">НАЗВАНИЕ</string>
     <string name="warm_up">Разминка</string>
     <string name="work">Упражнения</string>
     <string name="work_short">Упр.</string>
@@ -53,5 +53,6 @@
     <string name="ok_text">Данные удалены</string>
     <string name="no_text">Вечная память!</string>
     <string name="warning">Предупреждение</string>
+    <string name="title_activity_timer">Таймер</string>
 
 </resources>

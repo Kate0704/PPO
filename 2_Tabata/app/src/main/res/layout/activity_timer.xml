@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".ui.TimerActivity"
+    tools:deviceIds="wear">
+
+    <TextView
+        android:id="@+id/curr_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Work"
+        android:includeFontPadding="false"
+        android:textSize="70sp"
+        android:textColor="@color/timerStageColor"
+        app:layout_constraintBottom_toTopOf="@id/prev"
+        app:layout_constraintStart_toStartOf="@id/prev"
+        app:layout_constraintEnd_toEndOf="@id/prev"/>
+
+    <ImageButton
+        android:id="@+id/prev"
+        android:layout_width="0dp"
+        android:layout_height="165dp"
+        android:src="@drawable/ic_arrow_up"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@id/time"
+        app:layout_constraintEnd_toEndOf="@id/time"
+        app:layout_constraintStart_toStartOf="@id/time" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="11:30"
+        android:textAlignment="center"
+        android:includeFontPadding="false"
+        android:textSize="150sp"
+        android:textColor="@color/timerTimeColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="0dp"
+        android:layout_height="165dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintEnd_toEndOf="@id/time"
+        app:layout_constraintStart_toStartOf="@id/time"
+        app:layout_constraintTop_toBottomOf="@id/time" />
+
+    <TextView
+        android:id="@+id/next_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rest"
+        android:textSize="70sp"
+        android:textColor="@color/timerStageColor"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/next"
+        app:layout_constraintStart_toStartOf="@id/next"
+        app:layout_constraintEnd_toEndOf="@id/next"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <ImageButton
+        android:id="@+id/run_fragment_play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_play"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
