@@ -20,6 +20,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.Tabata.NoActionBar.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
     <style name="Menu" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:tint">@color/colorToolbar</item>
     </style>

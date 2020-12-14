@@ -16,6 +16,7 @@ class MainActivity : LocaleAwareCompatActivity(){
     private lateinit var viewModel: EditTabataViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_Tabata_NoActionBar)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(EditTabataViewModel::class.java)
