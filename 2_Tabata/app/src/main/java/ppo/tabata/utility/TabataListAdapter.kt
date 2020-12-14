@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.RecyclerviewItemBinding
-import ppo.tabata.viewModels.EditTabataViewModel
 import ppo.tabata.ui.activities.TimerActivity
+import ppo.tabata.viewModels.EditTabataViewModel
 
-class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val clickListener: (TabataEntity) -> Unit)
+class TabataListAdapter(private var tabataList: List<TabataEntity>?,
+                        private var itemListener: RecyclerViewLongClickListener,
+                        private val clickListener: (TabataEntity) -> Unit)
     : ListAdapter<TabataEntity, TabataListAdapter.TabataViewHolder>(TabataComparator()) {
 
     companion object {lateinit var binding: RecyclerviewItemBinding}
@@ -32,7 +34,7 @@ class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val
         if (!list.isNullOrEmpty()) { tabataList = list }
     }
 
-    inner class TabataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TabataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         fun bind(tabata: TabataEntity, clickListener: (TabataEntity) -> Unit) {
             binding.textView.text = tabata.name
             binding.work.text = EditTabataViewModel.getTime(tabata.work)
@@ -41,12 +43,20 @@ class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val
             binding.cycles.text = tabata.cycles.toString()
             binding.itemColor.setBackgroundColor(Color.parseColor(tabata.color))
             itemView.setOnClickListener { clickListener(tabata) }
-            binding.playButton.setOnClickListener{
+            binding.playButton.setOnClickListener {
                 val intent = Intent(it.context, TimerActivity::class.java)
                 intent.putExtra("tabata", tabataList?.get(adapterPosition))
                 it.context.startActivity(intent)
             }
+            binding.deleteButton.setOnClickListener(this)
         }
+        override fun onClick(v: View?) {
+            tabataList?.get(adapterPosition)?.let { itemListener.recyclerViewListLongClicked(it) }
+        }
+    }
+
+    interface RecyclerViewLongClickListener {
+        fun recyclerViewListLongClicked(tabata: TabataEntity)
     }
 
     class TabataComparator : DiffUtil.ItemCallback<TabataEntity>() {

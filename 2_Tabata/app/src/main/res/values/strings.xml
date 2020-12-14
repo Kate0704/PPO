@@ -71,4 +71,10 @@
     <string name="timerCompleted">Click to leave the page, please</string>
     <string name="complete">Complete</string>
 
+    <string name="delete_tabata_message">this tabata will be deleted. Continue??</string>
+    <string name="ok1">OK</string>
+    <string name="ok1_text">Tabata was deleted</string>
+    <string name="no1">NO</string>
+    <string name="no1_text">Cancel</string>
+
 </resources>

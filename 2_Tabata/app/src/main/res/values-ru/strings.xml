@@ -59,4 +59,10 @@
     <string name="timerCompleted">Нажмите, чтобы выйти</string>
     <string name="complete">Завершено</string>
 
+    <string name="delete_tabata_message">Эта табата будет удалена. Продолжить??</string>
+    <string name="ok1">ОК</string>
+    <string name="ok1_text">Табата удалена</string>
+    <string name="no1">Нет</string>
+    <string name="no1_text">Отмена</string>
+
 </resources>
