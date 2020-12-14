@@ -96,6 +96,6 @@ dependencies {
     implementation 'com.github.dhaval2404:colorpicker:1.2.1'
 
     // Locale helper
-    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.1.2'
+    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.1.1'
 
 }

@@ -2,13 +2,18 @@ package ppo.tabata.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.PreferenceManager
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
+import com.zeugmasolutions.localehelper.LocaleHelper
+import com.zeugmasolutions.localehelper.setCurrentLocale
 import ppo.tabata.R
 import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.ActivityTimerBinding
 import ppo.tabata.viewModels.TimerViewModel
+import java.util.*
 
 class TimerActivity : LocaleAwareCompatActivity() {
 
@@ -20,7 +25,8 @@ class TimerActivity : LocaleAwareCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val tabata: TabataEntity = intent.getSerializableExtra("tabata") as TabataEntity
-        viewModel.setTabata(tabata)
+
+        viewModel.setTabata(tabata, locale)
 
         binding.runStop.setOnClickListener{
             binding.next.isEnabled = true
@@ -74,8 +80,4 @@ class TimerActivity : LocaleAwareCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        this.finish()
-    }
 }

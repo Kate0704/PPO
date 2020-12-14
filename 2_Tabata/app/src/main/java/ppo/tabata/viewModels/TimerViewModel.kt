@@ -7,8 +7,10 @@ import android.media.SoundPool
 import android.os.CountDownTimer
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.zeugmasolutions.localehelper.setCurrentLocale
 import ppo.tabata.R
 import ppo.tabata.data.TabataEntity
+import java.util.*
 
 class TimerViewModel(application: Application): AndroidViewModel(application) {
     private lateinit var tabata: TabataEntity
@@ -30,6 +32,8 @@ class TimerViewModel(application: Application): AndroidViewModel(application) {
     private val interval: Long = 1000
     var isRunning: Boolean = false
     lateinit var res: Resources
+    var sequenceText = arrayListOf<String>()
+    var sequenceTime = arrayListOf<Int>()
 
     private val attr = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -37,16 +41,25 @@ class TimerViewModel(application: Application): AndroidViewModel(application) {
             .build()
     private val soundPool = SoundPool.Builder().setAudioAttributes(attr).build()
 
-    fun setTabata(tabata: TabataEntity) {
+    fun setTabata(tabata: TabataEntity, locale: Locale) {
         this.tabata = tabata
         timeRemaining = (tabata.warm_up * 1000).toLong()
         timeRemainingStatic = timeRemaining
         stagesCount = tabata.cycles * (tabata.repeats * 2 + 1)
         timeRemainingText.value = EditTabataViewModel.getTime(tabata.warm_up)
         res = getApplication<Application>().resources
+        res.updateConfiguration(res.configuration, res.getDisplayMetrics())
         currentText.value = res.getString(R.string.warm_up)
         nextText.value = res.getString(R.string.work_short)
         soundPool.load(getApplication<Application>().applicationContext, R.raw.notification, 1)
+    }
+
+    fun createSequence() {
+        for (i in 0 until tabata.cycles) {
+            for (j in 0 until tabata.repeats) {
+                sequenceText.add(res.getString(R.string.work_short))
+            }
+        }
     }
 
     fun pause() {
