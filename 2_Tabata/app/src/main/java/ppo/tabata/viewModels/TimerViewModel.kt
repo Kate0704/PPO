@@ -7,15 +7,11 @@ import android.media.SoundPool
 import android.os.CountDownTimer
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.zeugmasolutions.localehelper.setCurrentLocale
 import ppo.tabata.R
 import ppo.tabata.data.TabataEntity
-import java.util.*
 
 class TimerViewModel(application: Application): AndroidViewModel(application) {
     private lateinit var tabata: TabataEntity
-    private var sequence = arrayListOf<String>()
-
     var currentText = MutableLiveData<String>("Warm-up")
     var prevText = MutableLiveData<String>("")
     var nextText = MutableLiveData<String>("Work")
@@ -24,7 +20,7 @@ class TimerViewModel(application: Application): AndroidViewModel(application) {
     var timePercentRemaining: MutableLiveData<Int> = MutableLiveData(100)
     var isFinished = MutableLiveData<Boolean>(false)
 
-    lateinit var countDownTimer: CountDownTimer
+    var countDownTimer: CountDownTimer? = null
     private var timeRemaining: Long = 0
     private var timeRemainingStatic = timeRemaining
     var currIndex = 0
@@ -41,94 +37,84 @@ class TimerViewModel(application: Application): AndroidViewModel(application) {
             .build()
     private val soundPool = SoundPool.Builder().setAudioAttributes(attr).build()
 
-    fun setTabata(tabata: TabataEntity, locale: Locale) {
+    fun setTabata(tabata: TabataEntity) {
         this.tabata = tabata
-        timeRemaining = (tabata.warm_up * 1000).toLong()
-        timeRemainingStatic = timeRemaining
-        stagesCount = tabata.cycles * (tabata.repeats * 2 + 1)
-        timeRemainingText.value = EditTabataViewModel.getTime(tabata.warm_up)
         res = getApplication<Application>().resources
-        res.updateConfiguration(res.configuration, res.getDisplayMetrics())
-        currentText.value = res.getString(R.string.warm_up)
-        nextText.value = res.getString(R.string.work_short)
+        res.updateConfiguration(res.configuration, res.displayMetrics)   // for language update
+        setInitValues()
         soundPool.load(getApplication<Application>().applicationContext, R.raw.notification, 1)
+        createSequence()
     }
 
-    fun createSequence() {
-        for (i in 0 until tabata.cycles) {
-            for (j in 0 until tabata.repeats) {
+    private fun setInitValues() {
+        stagesCount = tabata.cycles * (tabata.repeats * 2 + 1)
+        timeRemaining = (tabata.warm_up * 1000).toLong()
+        timeRemainingStatic = timeRemaining
+        timeRemainingText.value = EditTabataViewModel.getTime(tabata.warm_up)
+        currentText.value = res.getString(R.string.warm_up)
+        nextText.value = res.getString(R.string.work_short)
+    }
+
+    private fun createSequence() {
+        for (i in 1..tabata.cycles) {
+            if (i == 1) {
+                sequenceText.add(res.getString(R.string.warm_up))
+                sequenceTime.add(tabata.warm_up)
+            }
+            else {
+                sequenceText.add(res.getString(R.string.cooldown))
+                sequenceTime.add(tabata.cooldown)
+            }
+            for (j in 1..tabata.repeats) {
                 sequenceText.add(res.getString(R.string.work_short))
+                sequenceText.add(res.getString(R.string.rest))
+                sequenceTime.add(tabata.work)
+                sequenceTime.add(tabata.rest)
             }
         }
     }
 
     fun pause() {
         isRunning = false
-        countDownTimer.cancel()
+        countDownTimer?.cancel()
     }
 
-    private fun isCooldown(i: Int): Boolean = (i % (2 * tabata.repeats + 1) == 0)
-    private fun isWork(): Boolean = (currIndex % 2 != (currIndex / (2 * tabata.repeats + 1)) % 2)
-
+    private fun getTimeRemainingText(time: Long) = EditTabataViewModel.getTime(time.toInt() / 1000)
 
     fun startTimer() {
         isRunning = true
         countDownTimer = object : CountDownTimer(timeRemaining, interval) {
-
             override fun onFinish() {
                 soundPool.play(1, 1F, 1F, 1, 0, 1F)
                 currIndex += 1
+                if (currIndex < 0) currIndex = 0
+                timePercentRemaining.value = 100
                 if (currIndex == stagesCount) {
                     currentText.value = res.getString(R.string.complete)
-                    timeRemainingText.value = "00:00"
                     prevText.value = res.getString(R.string.timerCompleted)
-                    timePercentRemaining.value = 100
                     isFinished.value = true
                 } else {
-                    when {
-                        currIndex == 0 -> {
-                            currentText.value = res.getString(R.string.warm_up)
-                            nextText.value = res.getString(R.string.work_short)
-                            prevText.value = ""
-                            timeRemaining = tabata.warm_up.toLong() * 1000
-                        }
-                        isCooldown(currIndex) -> {
-                            currentText.value = res.getString(R.string.cooldown)
-                            nextText.value = res.getString(R.string.work_short)
-                            prevText.value = res.getString(R.string.rest)
-                            timeRemaining = tabata.cooldown.toLong() * 1000
-                        }
-                        isWork() -> {
-                            currentText.value = res.getString(R.string.work_short)
-                            prevText.value = if (currIndex == 1) res.getString(R.string.warm_up)
-                                             else res.getString(R.string.work_short)
-                            nextText.value = res.getString(R.string.rest)
-                            timeRemaining = tabata.work.toLong() * 1000
-                        }
-                        else -> {
-                            currentText.value = res.getString(R.string.rest)
-                            when {
-                                currIndex == stagesCount - 1 -> nextText.value = ""
-                                isCooldown(currIndex + 1) -> nextText.value = res.getString(R.string.cooldown)
-                                else -> nextText.value = res.getString(R.string.work_short)
-                            }
-                            prevText.value = res.getString(R.string.work_short)
-                            timeRemaining = tabata.rest.toLong() * 1000
-                        }
-                    }
+                    currentText.value = sequenceText[currIndex]
+                    nextText.value = if (currIndex == stagesCount - 1) ""
+                                     else sequenceText[currIndex+1]
+                    prevText.value = if (currIndex == 0) "" else sequenceText[currIndex-1]
+                    timeRemaining = sequenceTime[currIndex].toLong() * 1000
                     timeRemainingStatic = timeRemaining
-                    timeRemainingText.value = EditTabataViewModel.getTime(timeRemaining.toInt() / 1000)
-                    timePercentRemaining.value = 100
+                    timeRemainingText.value = getTimeRemainingText(timeRemaining)
                     startTimer()
                 }
             }
-
             override fun onTick(millisUntilFinished: Long) {
-                timeRemainingText.value = EditTabataViewModel.getTime(timeRemaining.toInt() / 1000)
+                timeRemainingText.value = getTimeRemainingText(timeRemaining)
                 timePercentRemaining.value = ((timeRemaining * 100) / timeRemainingStatic).toInt()
                 timeRemaining -= interval
             }
-
         }.start()
+    }
+
+    fun rewind(i: Int) {
+        currIndex -= i
+        countDownTimer!!.cancel()
+        countDownTimer!!.onFinish()
     }
 }

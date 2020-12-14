@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="@layout/activity_main"
-    tools:context=".ui.MainActivity"
+    tools:context=".ui.activities.MainActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <fragment

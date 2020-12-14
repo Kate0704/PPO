@@ -1,19 +1,14 @@
-package ppo.tabata.ui
+package ppo.tabata.ui.activities
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.preference.PreferenceManager
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
-import com.zeugmasolutions.localehelper.LocaleHelper
-import com.zeugmasolutions.localehelper.setCurrentLocale
 import ppo.tabata.R
 import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.ActivityTimerBinding
 import ppo.tabata.viewModels.TimerViewModel
-import java.util.*
 
 class TimerActivity : LocaleAwareCompatActivity() {
 
@@ -24,9 +19,7 @@ class TimerActivity : LocaleAwareCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val tabata: TabataEntity = intent.getSerializableExtra("tabata") as TabataEntity
-
-        viewModel.setTabata(tabata, locale)
+        viewModel.setTabata(intent.getSerializableExtra("tabata") as TabataEntity)
 
         binding.runStop.setOnClickListener{
             binding.next.isEnabled = true
@@ -66,18 +59,20 @@ class TimerActivity : LocaleAwareCompatActivity() {
         })
         binding.next.setOnClickListener{
             binding.runStop.setImageResource(R.drawable.ic_pause)
-            viewModel.countDownTimer.cancel()
-            viewModel.countDownTimer.onFinish()
+            viewModel.rewind(0)
         }
         binding.prev.setOnClickListener{
             if (viewModel.isFinished.value == true) finish()
             else {
                 binding.runStop.setImageResource(R.drawable.ic_pause)
-                viewModel.currIndex -= 2
-                viewModel.countDownTimer.cancel()
-                viewModel.countDownTimer.onFinish()
+                viewModel.rewind(2)
             }
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (viewModel.countDownTimer != null) viewModel.pause()
+        finish()
+    }
 }

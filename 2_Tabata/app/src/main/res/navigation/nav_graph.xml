@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="ppo.tabata.ui.TabataListFragment"
+        android:name="ppo.tabata.ui.fragments.TabataListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_tabata_list">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="ppo.tabata.ui.TabataEditFragment"
+        android:name="ppo.tabata.ui.fragments.TabataEditFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_tabata_edit">
 

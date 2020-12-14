@@ -1,4 +1,4 @@
-package ppo.tabata.ui
+package ppo.tabata.ui.activities
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -26,24 +26,17 @@ class SettingsActivity : LocaleAwareCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        settingsFragment = SettingsFragment()
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.prefs_content, settingsFragment)
-                .commit()
+        settingsFragment =
+            SettingsFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.prefs_content, settingsFragment).commit()
     }
 
     override fun onResume() {
         val themePreference = settingsFragment.findPreference<Preference>("dark_theme")!!
         themePreference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->         // THEME //
-            run {
-                sharedPreferences.edit()
-                    .putBoolean("dark_theme", newValue as Boolean)
-                    .apply()
-            }
-            TabataApp.updateTheme(newValue as Boolean)
+            sharedPreferences.edit().putBoolean("dark_theme", newValue as Boolean).apply()
+            TabataApp.updateTheme(newValue)
             true
         }
 
@@ -64,7 +57,6 @@ class SettingsActivity : LocaleAwareCompatActivity() {
                 "medium" -> sizeCoef = 1.0f
                 "large" -> sizeCoef = 1.15f
             }
-            sharedPreferences.edit().putFloat("size_coef", sizeCoef).apply()
             resources.configuration.fontScale = sizeCoef
             resources.displayMetrics.scaledDensity = resources.configuration.fontScale * resources.displayMetrics.density
             baseContext.resources.updateConfiguration(resources.configuration, DisplayMetrics())

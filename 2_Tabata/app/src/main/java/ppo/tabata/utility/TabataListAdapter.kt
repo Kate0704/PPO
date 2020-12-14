@@ -8,13 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.zeugmasolutions.localehelper.LocaleHelper
-import com.zeugmasolutions.localehelper.Locales
 import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.RecyclerviewItemBinding
 import ppo.tabata.viewModels.EditTabataViewModel
-import ppo.tabata.ui.TimerActivity
-import java.util.*
+import ppo.tabata.ui.activities.TimerActivity
 
 class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val clickListener: (TabataEntity) -> Unit)
     : ListAdapter<TabataEntity, TabataListAdapter.TabataViewHolder>(TabataComparator()) {

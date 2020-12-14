@@ -1,11 +1,10 @@
-package ppo.tabata.ui
+package ppo.tabata.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
 import ppo.tabata.R
 import ppo.tabata.databinding.ActivityMainBinding
@@ -23,12 +22,6 @@ class MainActivity : LocaleAwareCompatActivity(){
         setSupportActionBar(binding.toolbar)
         setContentView(binding.root)
         setTitle(R.string.app_name)
-
-        val prefs = getDefaultSharedPreferences(this)
-        val scale = prefs.getFloat("size_coef", 1F)
-        resources.configuration.fontScale = scale
-        val metrics = resources.displayMetrics
-        metrics.scaledDensity = resources.configuration.fontScale * metrics.density
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

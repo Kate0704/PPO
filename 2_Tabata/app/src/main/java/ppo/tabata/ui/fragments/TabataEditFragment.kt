@@ -1,4 +1,4 @@
-package ppo.tabata.ui
+package ppo.tabata.ui.fragments
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle

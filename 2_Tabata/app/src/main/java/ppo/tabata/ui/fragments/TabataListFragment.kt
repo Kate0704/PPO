@@ -1,4 +1,4 @@
-package ppo.tabata.ui
+package ppo.tabata.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

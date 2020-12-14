@@ -17,13 +17,13 @@
         android:theme="@style/Theme.Tabata">
 
         <activity
-            android:name=".ui.TimerActivity"
+            android:name=".ui.activities.TimerActivity"
             android:label="@string/title_activity_timer"/>
         <activity
-            android:name=".ui.SettingsActivity"
+            android:name=".ui.activities.SettingsActivity"
             android:configChanges="locale" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:configChanges="locale"
             android:label="@string/app_name"
             android:theme="@style/Theme.Tabata.NoActionBar">

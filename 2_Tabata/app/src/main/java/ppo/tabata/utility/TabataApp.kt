@@ -17,11 +17,11 @@ class TabataApp : LocaleAwareApplication() {
     override fun onCreate() {
         super.onCreate()
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-
+        // set default locale for first launch //
         if (sharedPreferences.getBoolean("first", true))
             Locale.setDefault(Locale("eng"))
         sharedPreferences.edit().putBoolean("first", false).apply()
-
+        //-------------------------------------//
         val darkTheme: Boolean = sharedPreferences.getBoolean("dark_theme", false)
         updateTheme(darkTheme)
     }
