@@ -1,6 +1,5 @@
 package ppo.tabata.utility
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ppo.tabata.data.TabataEntity
 import ppo.tabata.databinding.RecyclerviewItemBinding
-import ppo.tabata.ui.EditTabataViewModel
+import ppo.tabata.viewModels.EditTabataViewModel
 import ppo.tabata.ui.TimerActivity
 
 class TabataListAdapter(private var tabataList: List<TabataEntity>?, private val clickListener: (TabataEntity) -> Unit)

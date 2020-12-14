@@ -16,7 +16,7 @@
     <string name="repeats">Повторы</string>
     <string name="repeats_short">Повт.</string>
     <string name="cycles">Циклы</string>
-    <string name="cooldown">Отдых после цикла</string>
+    <string name="cooldown">Заминка</string>
     <string name="tabata_color">Цвет</string>
 
     <!-- Settings -->
@@ -53,6 +53,10 @@
     <string name="ok_text">Данные удалены</string>
     <string name="no_text">Вечная память!</string>
     <string name="warning">Предупреждение</string>
+
+    <!-- Timer Activity -->
     <string name="title_activity_timer">Таймер</string>
+    <string name="timerCompleted">Нажмите, чтобы выйти</string>
+    <string name="complete">Завершено</string>
 
 </resources>

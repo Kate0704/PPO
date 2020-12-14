@@ -1,4 +1,4 @@
-package ppo.tabata.ui
+package ppo.tabata.viewModels
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ppo.tabata.data.TabataEntity
-import ppo.tabata.viewModels.TabataViewModel
 import ppo.tabata.databinding.FragmentTabataEditBinding
 import ppo.tabata.utility.TimeInputFilter
 

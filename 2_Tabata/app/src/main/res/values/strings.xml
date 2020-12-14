@@ -9,6 +9,8 @@
 
     <string name="db_name" translatable="false">TabataDatabase</string>
 
+    <!-- Edit page -->
+    <string name="tabata_title_hint">TABATA TITLE</string>
     <string name="warm_up">Warm up</string>
     <string name="work">Work</string>
     <string name="work_short">Work</string>
@@ -66,7 +68,7 @@
 
     <!-- Timer Activity -->
     <string name="title_activity_timer">Timer</string>
-    <string name="tabata_title_hint">TABATA TITLE</string>
-
+    <string name="timerCompleted">Click to leave the page, please</string>
+    <string name="complete">Complete</string>
 
 </resources>

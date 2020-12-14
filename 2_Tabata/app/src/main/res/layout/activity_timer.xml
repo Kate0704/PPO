@@ -8,65 +8,120 @@
     tools:context=".ui.TimerActivity"
     tools:deviceIds="wear">
 
-    <TextView
-        android:id="@+id/curr_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Work"
-        android:includeFontPadding="false"
-        android:textSize="70sp"
-        android:textColor="@color/timerStageColor"
-        app:layout_constraintBottom_toTopOf="@id/prev"
-        app:layout_constraintStart_toStartOf="@id/prev"
-        app:layout_constraintEnd_toEndOf="@id/prev"/>
 
-    <ImageButton
-        android:id="@+id/prev"
-        android:layout_width="0dp"
-        android:layout_height="165dp"
-        android:src="@drawable/ic_arrow_up"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/time"
-        app:layout_constraintEnd_toEndOf="@id/time"
-        app:layout_constraintStart_toStartOf="@id/time" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="11:30"
-        android:textAlignment="center"
-        android:includeFontPadding="false"
-        android:textSize="150sp"
-        android:textColor="@color/timerTimeColor"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:progress="95"
+        android:progressDrawable="@drawable/phase_progress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/next"
-        android:layout_width="0dp"
-        android:layout_height="165dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_arrow_down"
-        app:layout_constraintEnd_toEndOf="@id/time"
-        app:layout_constraintStart_toStartOf="@id/time"
-        app:layout_constraintTop_toBottomOf="@id/time" />
 
-    <TextView
-        android:id="@+id/next_title"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rest"
-        android:textSize="70sp"
-        android:textColor="@color/timerStageColor"
-        android:includeFontPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/next"
-        app:layout_constraintStart_toStartOf="@id/next"
-        app:layout_constraintEnd_toEndOf="@id/next"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <TextView
+            android:id="@+id/curr_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="WORK"
+            android:textColor="@color/timerTimeColor"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/time"
+            app:layout_constraintRight_toRightOf="@id/time"
+            app:layout_constraintLeft_toLeftOf="@id/time"
+            tools:layout_editor_absoluteY="30dp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11:30"
+            android:textAlignment="center"
+            android:includeFontPadding="false"
+            android:textSize="60sp"
+            android:textColor="@color/textColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/prev_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/prev"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:enabled="false"
+            android:background="@drawable/ic_prev"
+            android:shadowColor="@color/timerTimeColor"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:enabled="false"
+            android:background="@drawable/ic_next"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintRight_toRightOf="@id/prev_next"
+        app:layout_constraintLeft_toLeftOf="@id/prev_next"
+        app:layout_constraintTop_toBottomOf="@id/prev_next">
+
+        <TextView
+            android:id="@+id/prev_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Work"
+            android:textSize="30sp"
+            android:textColor="@color/timerStageColor"/>
+
+        <TextView
+            android:id="@+id/next_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Rest"
+            android:textSize="30sp"
+            android:textColor="@color/timerStageColor"/>
+
+    </LinearLayout>
 
 
     <androidx.cardview.widget.CardView
@@ -79,7 +134,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
     <ImageButton
-        android:id="@+id/run_fragment_play_button"
+        android:id="@+id/run_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_play"

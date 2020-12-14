@@ -17,6 +17,7 @@ import ppo.tabata.viewModels.TabataViewModelFactory
 import ppo.tabata.databinding.FragmentTabataListBinding
 import ppo.tabata.utility.TabataApp
 import ppo.tabata.utility.TabataListAdapter
+import ppo.tabata.viewModels.EditTabataViewModel
 
 class TabataListFragment : Fragment() {
 

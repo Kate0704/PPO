@@ -1,18 +1,15 @@
 package ppo.tabata.ui
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.preference.PreferenceManager
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
 import ppo.tabata.R
 import ppo.tabata.databinding.ActivityMainBinding
-import java.util.*
+import ppo.tabata.viewModels.EditTabataViewModel
 
 class MainActivity : LocaleAwareCompatActivity(){
 
