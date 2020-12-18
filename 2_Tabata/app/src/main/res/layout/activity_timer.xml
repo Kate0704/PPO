@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".ui.activities.TimerActivity"
+    tools:deviceIds="wear">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/progress_bar_width"
+        android:layout_height="@dimen/progress_bar_height"
+        android:progress="95"
+        android:progressDrawable="@drawable/phase_progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <TextView
+            android:id="@+id/curr_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="WORK"
+            android:textColor="@color/timerTimeColor"
+            android:textSize="@dimen/curr_stage_text_size"
+            android:layout_marginBottom="@dimen/curr_stage_margin"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/time"
+            app:layout_constraintRight_toRightOf="@id/time"
+            app:layout_constraintLeft_toLeftOf="@id/time"
+            tools:layout_editor_absoluteY="30dp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11:30"
+            android:textAlignment="center"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/time_remaining_text_size"
+            android:textColor="@color/textColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/prev_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/prev_next_margin_top"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/prev"
+            android:layout_width="@dimen/prev_next_width"
+            android:layout_height="@dimen/prev_next_height"
+            android:enabled="false"
+            android:background="@drawable/ic_prev"
+            android:shadowColor="@color/timerTimeColor"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next"
+            android:layout_width="@dimen/prev_next_width"
+            android:layout_height="@dimen/prev_next_height"
+            android:enabled="false"
+            android:background="@drawable/ic_next"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/prev_next_text_margin_horizontal"
+        app:layout_constraintRight_toRightOf="@id/prev_next"
+        app:layout_constraintLeft_toLeftOf="@id/prev_next"
+        app:layout_constraintTop_toBottomOf="@id/prev_next">
+
+        <TextView
+            android:id="@+id/prev_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/prev_text_margin_end"
+            android:text="Work"
+            android:textSize="@dimen/prev_next_text_size"
+            android:textColor="@color/timerStageColor"/>
+
+        <TextView
+            android:id="@+id/next_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Rest"
+            android:textSize="@dimen/prev_next_text_size"
+            android:textColor="@color/timerStageColor"/>
+
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/run_stop_card_elevation"
+        android:layout_margin="@dimen/run_stop_margin"
+        app:cardCornerRadius="@dimen/run_stop_card_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <ImageButton
+        android:id="@+id/run_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_play"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
