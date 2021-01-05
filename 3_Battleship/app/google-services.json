@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "36929537059",
+    "project_id": "kate-battleship",
+    "storage_bucket": "kate-battleship.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36929537059:android:ec4c0d5f4e3bd0c88e9d96",
+        "android_client_info": {
+          "package_name": "ppo.battleship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36929537059-0rs518egekqt9ag8t243gblk3ac9cuan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ppo.battleship",
+            "certificate_hash": "0b64daaf6c98e058dd2a8943a9ecff2c59906d6e"
+          }
+        },
+        {
+          "client_id": "36929537059-153eoii016lb80qbefesp26g5a7t74li.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIJX_odCxFcGeWylHQ37zkpG6Ej5CZV7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36929537059-153eoii016lb80qbefesp26g5a7t74li.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
