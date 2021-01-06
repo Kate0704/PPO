@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,14 +28,41 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:lab3" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:battleship" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d33f78a5-1f4f-495c-a5b4-c55b4aa24437" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../2_Tabata/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2_Tabata/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/kate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/GameActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/girl_sad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/field_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_19_4_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_components_16_0_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_5_1_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Battleship.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Battleship.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/Cell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/Cell.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/CreateGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/CreateGameActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/FieldFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/GridAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/GridAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/MenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/MenuActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cell_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cell_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/girl_sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_field.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +92,8 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
-        <option value="Kotlin Class" />
         <option value="navigationResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -77,11 +107,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-view/home/kate/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/values-round" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/RecyclerViewGridLayoutManager/RecyclerViewGridLayoutManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="multi-representation-preview/home/kate/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
@@ -89,20 +121,25 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/java/ppo/battleship" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="ppo.battleship" />
     </key>
-    <key name="android.template.-1278688503">
+    <key name="android.template.-2071417338">
       <recent name="ppo.battleship" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/ppo/battleship" />
     </key>
     <key name="android.template.-1764025985">
       <recent name="ppo.battleship" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="android.template.-1278688503">
+      <recent name="ppo.battleship" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,7 +232,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="lab3" />
+                        <option value="battleship" />
                       </list>
                     </value>
                   </entry>
@@ -217,46 +254,46 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="767" y="271" width="442" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1608250542241" />
-    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608054904106">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609903670399">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1608054904106" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1609903670399" />
     <state x="746" y="327" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1608043120016">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="746" y="327" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1608043120016" />
-    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog" timestamp="1608248552844">
+    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog" timestamp="1609903523637">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1608248552844" />
-    <state x="909" y="291" width="356" height="381" key="AndroidCreateXmlResourceDialog" timestamp="1608059489045">
+    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1609903523637" />
+    <state x="909" y="291" width="357" height="381" key="AndroidCreateXmlResourceDialog" timestamp="1609899687900">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="909" y="291" width="356" height="381" key="AndroidCreateXmlResourceDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1608059489045" />
+    <state x="909" y="291" width="357" height="381" key="AndroidCreateXmlResourceDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1609899687900" />
     <state width="456" height="506" key="DebuggerActiveHint" timestamp="1608249749222">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="456" height="506" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1608249749222" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1608240394561">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1609886823839">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1608240394561" />
-    <state width="1807" height="608" key="GridCell.Tab.0.bottom" timestamp="1608250613272">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1609886823839" />
+    <state width="1807" height="158" key="GridCell.Tab.0.bottom" timestamp="1609903328770">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="608" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1608250613272" />
-    <state width="1807" height="608" key="GridCell.Tab.0.center" timestamp="1608250613271">
+    <state width="1807" height="158" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1609903328770" />
+    <state width="1807" height="158" key="GridCell.Tab.0.center" timestamp="1609903328770">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="608" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1608250613271" />
-    <state width="1807" height="608" key="GridCell.Tab.0.left" timestamp="1608250613271">
+    <state width="1807" height="158" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1609903328770" />
+    <state width="1807" height="158" key="GridCell.Tab.0.left" timestamp="1609903328770">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="608" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1608250613271" />
-    <state width="1807" height="608" key="GridCell.Tab.0.right" timestamp="1608250613271">
+    <state width="1807" height="158" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1609903328770" />
+    <state width="1807" height="158" key="GridCell.Tab.0.right" timestamp="1609903328770">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="608" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1608250613271" />
+    <state width="1807" height="158" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1609903328770" />
     <state width="1807" height="85" key="GridCell.Tab.1.bottom" timestamp="1608249868340">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -277,27 +314,26 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="765" y="332" width="446" height="440" key="chooseDestDirectoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1608304826792" />
+    <state x="683" y="291" width="621" height="522" key="find.popup" timestamp="1609844634659">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="683" y="291" width="621" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1609844634659" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/GridAdapter.kt</url>
-          <line>24</line>
+          <line>20</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/GridAdapter.kt</url>
-          <line>29</line>
+          <line>25</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/GridAdapter.kt</url>
-          <line>39</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

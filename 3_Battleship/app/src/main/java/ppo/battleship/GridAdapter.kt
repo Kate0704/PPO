@@ -1,10 +1,6 @@
 package ppo.battleship
 
-import android.content.Intent
 import android.content.res.Resources
-import android.graphics.Color
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +23,7 @@ class GridAdapter(private var res: Resources,
     }
 
     override fun onBindViewHolder(holder: CellViewHolder, position: Int) {
-        cellList[position].let { holder.bind(it, clickListener) }
+        cellList[position].let { holder.bind(it, position, clickListener) }
     }
 
     override fun submitList(list:  MutableList<Cell>?) {
@@ -36,8 +32,8 @@ class GridAdapter(private var res: Resources,
     }
 
     inner class CellViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(cell: Cell, clickListener: (Cell) -> Unit) {
-            binding.cellImg.setImageResource(R.color.colorPrimaryLight)
+        fun bind(cell: Cell, position: Int, clickListener: (Cell) -> Unit) {
+            binding.cellImg.setImageResource(cell.imgRes)
             itemView.setOnClickListener { clickListener(cell) }
         }
     }

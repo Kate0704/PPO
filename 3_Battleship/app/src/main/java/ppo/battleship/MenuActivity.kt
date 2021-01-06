@@ -50,11 +50,14 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun joinGame() {
-
+        val intent = Intent(this, CreateGameActivity::class.java)
+        intent.putExtra("joinGame", true)
+        this.startActivity(intent)
     }
 
     private fun createGame() {
         val intent = Intent(this, CreateGameActivity::class.java)
+        intent.putExtra("joinGame", false)
         this.startActivity(intent)
     }
 

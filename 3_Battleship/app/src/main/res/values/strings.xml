@@ -24,4 +24,5 @@
     <string name="title_activity_create_game">CreateGameActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_game_info">\"Tap to create a ship.\n\nHint:\n 4 battleship (1 blocks) \n 3 cruisers (2 blocks) \n 2 destroyers (3 blocks) \n 1 torpeda (4 blocks)\"</string>
 </resources>
