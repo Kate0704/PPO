@@ -1,4 +1,4 @@
-package ppo.battleship
+package ppo.battleship.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import ppo.battleship.R
 import ppo.battleship.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity(), View.OnClickListener {
@@ -56,7 +57,7 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun createGame() {
-        val intent = Intent(this, CreateGameActivity::class.java)
+        val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("joinGame", false)
         this.startActivity(intent)
     }

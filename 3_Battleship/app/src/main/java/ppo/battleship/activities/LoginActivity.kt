@@ -1,4 +1,4 @@
-package ppo.battleship
+package ppo.battleship.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import ppo.battleship.R
 import ppo.battleship.databinding.ActivityLoginBinding
 
 
@@ -48,7 +49,9 @@ class LoginActivity : AppCompatActivity(){
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
+        startActivityForResult(signInIntent,
+            RC_SIGN_IN
+        )
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

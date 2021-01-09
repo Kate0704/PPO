@@ -17,6 +17,7 @@
         <item name="colorPrimarySurface">@color/Surface</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimaryDark</item>
+        <item name="fontFamily">@font/electrolize</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -28,7 +29,6 @@
     <style name="MenuButtonStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
-        <item name="android:fontFamily">serif-monospace</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/textColor</item>

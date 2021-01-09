@@ -1,18 +1,19 @@
-package ppo.battleship
+package ppo.battleship.adapters
 
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import ppo.battleship.R
 import ppo.battleship.databinding.CellItemBinding
+import ppo.battleship.models.Cell
+import ppo.battleship.models.Type
 
 
-class GridAdapter(private var res: Resources,
-                  private var cellList: MutableList<Cell>,
-                  private val clickListener: (Cell) -> Unit)
+class GridAdapter(private var cellList: MutableList<Cell>)
     : ListAdapter<Cell, GridAdapter.CellViewHolder>(CellComparator()) {
 
     companion object {lateinit var binding: CellItemBinding}
@@ -23,7 +24,7 @@ class GridAdapter(private var res: Resources,
     }
 
     override fun onBindViewHolder(holder: CellViewHolder, position: Int) {
-        cellList[position].let { holder.bind(it, position, clickListener) }
+        cellList[position].let { holder.bind(it) }
     }
 
     override fun submitList(list:  MutableList<Cell>?) {
@@ -31,10 +32,23 @@ class GridAdapter(private var res: Resources,
         if (!list.isNullOrEmpty()) { cellList = list }
     }
 
-    inner class CellViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(cell: Cell, position: Int, clickListener: (Cell) -> Unit) {
-            binding.cellImg.setImageResource(cell.imgRes)
-            itemView.setOnClickListener { clickListener(cell) }
+    inner class CellViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bind(cell: Cell) {
+            val imgView = itemView.findViewById<ImageView>(R.id.cell_img)
+            imgView.setImageResource(cell.emptyRes)
+            imgView.setOnClickListener{
+                if (cell.getCellType() == Type.EMPTY) cell.setCellType(
+                    Type.SHIP)
+                else cell.setCellType(Type.EMPTY)
+                when (cell.getCellType()) {
+                    Type.EMPTY -> imgView.setImageResource(cell.emptyRes)
+                    Type.SHIP -> imgView.setImageResource(R.color.ship)
+                    Type.HIT -> binding.cellImg.setImageResource(cell.hitRes)
+                    Type.MISS -> binding.cellImg.setImageResource(
+                        R.color.miss
+                    )
+                }
+            }
         }
     }
 

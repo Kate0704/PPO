@@ -1,11 +1,13 @@
-package ppo.battleship
+package ppo.battleship.models
 
 import android.graphics.Color
+import ppo.battleship.R
 
-class Cell {
+class Cell() {
     private var type = Type.EMPTY
-    var imgRes = Color.BLACK
-    fun getCellType() = type
+    var emptyRes = Color.BLACK
+    val hitRes = R.drawable.hit
+    fun getCellType(): Type = type
     fun setCellType(type: Type) { this.type = type }
 }
 

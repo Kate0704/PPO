@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.appcompat.widget.LinearLayoutCompat
     android:id="@+id/cell_item"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/cell_img"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:adjustViewBounds="false"
         android:foreground="@drawable/cell_background"
         android:src="@drawable/ic_launcher_background"/>
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

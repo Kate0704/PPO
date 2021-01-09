@@ -1,4 +1,4 @@
-package ppo.battleship
+package ppo.battleship.activities
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -18,16 +18,21 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.gson.Gson
+import ppo.battleship.R
+import ppo.battleship.adapters.GridAdapter
 import ppo.battleship.databinding.ActivityCreateGameBinding
+import ppo.battleship.models.Cell
+import ppo.battleship.models.FieldReviewer
+import ppo.battleship.models.GameInfo
+import ppo.battleship.models.Type
 import java.util.*
 
 
 class CreateGameActivity : AppCompatActivity(){
-
     private val binding by lazy { ActivityCreateGameBinding.inflate(layoutInflater) }
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-    private var cellList: MutableList<Cell> = MutableList(100) {Cell()}
+    private var cellList: MutableList<Cell> = MutableList(100) { Cell() }
     private lateinit var currentUser: FirebaseUser
     private var database: FirebaseDatabase? = null
     private lateinit var game: DatabaseReference
@@ -39,25 +44,23 @@ class CreateGameActivity : AppCompatActivity(){
         val mAuth = FirebaseAuth.getInstance()
         currentUser = mAuth.currentUser!!
         val joinGame = intent.getBooleanExtra("joinGame", false)
+        if (joinGame) binding.idEditText.visibility = View.VISIBLE
+        else binding.idEditText.visibility = View.GONE
         binding.progressBarPlay.visibility = View.GONE
 
-        initializeFieldImages()
-        val adapter = GridAdapter (resources, cellList) { cell -> cellClicked(cell) }
+        FieldReviewer(cellList).initializeFieldImages(resources, packageName)
+        val adapter = GridAdapter(cellList)
         binding.field.layoutManager = GridLayoutManager(this, 10)
         binding.field.adapter = adapter
-        binding.floatingActionButtonInfo.setOnClickListener{ showInfoDialog() }
 
         binding.btnPlayCreateGameFragment.setOnClickListener {
-            if (true)
-                showError()
+            if (!FieldReviewer(cellList).fieldOk())
+                showError(getString(R.string.incorrect_ship_placement_message))
             else {
-                if (joinGame)
-                    enterGameId()
-                else
-                    getGameId()
+                arrangeId(joinGame)
             }
         }
-
+        binding.floatingActionButtonInfo.setOnClickListener{ showInfoDialog() }
         setContentView(binding.root)
     }
 
@@ -66,54 +69,36 @@ class CreateGameActivity : AppCompatActivity(){
         alertDialog.setMessage(getString(R.string.create_game_info))
         alertDialog.setPositiveButton("OK") { _, _ ->
             Toast.makeText(applicationContext, "U're a curious one. I like u!", Toast.LENGTH_LONG).show()
+        }.show()
+    }
+
+    private fun arrangeId(joinGame: Boolean) {
+        if(joinGame) {
+            id = binding.idEditText.text.toString()
+            writeInitData(joinGame)
         }
-        alertDialog.show()
-    }
+        else {
+            id = UUID.randomUUID().toString().replace("-", "")
+            val alertDialog = AlertDialog.Builder(this)
+            alertDialog.setMessage("Your game id:\n$id")
+            alertDialog.setPositiveButton("COPY!") { _, _ ->
+                val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("text", id)
+                Objects.requireNonNull(clipboard).setPrimaryClip(clip)
+                Toast.makeText(applicationContext, "Id copied to Clipboard",Toast.LENGTH_LONG).show()
 
-    private fun initializeFieldImages() {
-        for (i in 1..100) {
-            var mDrawableName = "image_part_" // файл в папке drawable
-            var pos = i.toString()
-            if (i > 9 && i != 100)
-                pos = "0$pos"
-            mDrawableName += pos
-            val resID: Int = resources.getIdentifier(mDrawableName, "drawable", packageName)
-            cellList[i - 1].imgRes = resID
+                val alertDialog2 = AlertDialog.Builder(this)
+                alertDialog2.setMessage(getString(R.string.play_now_ad_message))
+                alertDialog2.setPositiveButton("PLAY NOW!") { _, _ ->
+                    binding.progressBarPlay.visibility = View.VISIBLE
+                    writeInitData(joinGame)
+                }.show()
+            }.show()
         }
     }
 
-    private fun cellClicked(cell: Cell) {
-    }
-
-    private fun getGameId() {
-        id = UUID.randomUUID().toString().replace("-", "")
-        val alertDialog = AlertDialog.Builder(this)
-        alertDialog.setMessage("Your game id:\n$id")
-        alertDialog.setPositiveButton("COPY!") { _, _ ->
-            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = ClipData.newPlainText("simple text", id)
-            Objects.requireNonNull(clipboard).setPrimaryClip(clip)
-            Toast.makeText(applicationContext, "Id copied to Clipboard",
-                    Toast.LENGTH_LONG).show()
-
-            val alertDialog2 = AlertDialog.Builder(this)
-            alertDialog2.setMessage("Be sure your friend is ready to play with you! Ask him, please")
-            alertDialog2.setPositiveButton("PLAY NOW!") { _, _ ->
-                binding.progressBarPlay.visibility = View.VISIBLE
-                connect(true)
-            }
-            alertDialog2.show()
-        }
-        alertDialog.show()
-    }
-
-    private fun enterGameId() {
+    private fun writeInitData(join: Boolean) {
         binding.progressBarPlay.visibility = View.VISIBLE
-        id = binding.idEditText.text.toString()
-        connect(false)
-    }
-
-    private fun connect(start: Boolean) {
         database = FirebaseDatabase.getInstance()
         game = database!!.getReference("games").child(id)
         val checkListener: ValueEventListener
@@ -125,25 +110,26 @@ class CreateGameActivity : AppCompatActivity(){
                     val gsonCellList = gson.toJson(cellList)
                     val gsonCellListEmpty = gson.toJson(MutableList(100) { Cell() })
                     val playerName = currentUser.displayName
-                    if (start) {
-                        game.setValue(GameInfo(playerName, "", gsonCellList, gsonCellListEmpty))
-                        goToGame(true)
+                    if (!join) {
+                        game.setValue(GameInfo(playerName,"", gsonCellList, gsonCellListEmpty))
+                        startGame(join)
                     }
-                    else{
+                    else if (dataSnapshot.value != null){
                         game.child("player_2").setValue(playerName)
                         game.child("player_2_field").setValue(gsonCellList)
-                        goToGame(false)
+                        startGame(join)
                     }
+                    else showError(getString(R.string.incorrect_id_message))
                 }
-                else showIdIncorrectMessage()
+                else showError(getString(R.string.incorrect_id_message))
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
-        showIdIncorrectMessage()
         game.addValueEventListener(checkListener)
+        binding.progressBarPlay.visibility = View.GONE
     }
 
-    private fun goToGame(start: Boolean) {
+    private fun startGame(start: Boolean) {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("id", id)
         intent.putExtra("start", start)
@@ -151,31 +137,13 @@ class CreateGameActivity : AppCompatActivity(){
         finish()
     }
 
-    private fun showError() {
-        val toast = Toast.makeText(this,
-                "Incorrect placement for ships... Be careful, honey!",
-                Toast.LENGTH_LONG)
+    private fun showError(message: String) {
+        val toast = Toast.makeText(this, message, Toast.LENGTH_LONG)
         toast.setGravity(Gravity.CENTER, 0, 0)
         val toastContainer = toast.view as LinearLayout?
-        val catImageView = ImageView(this)
-        catImageView.minimumWidth = 500
-        catImageView.maxWidth = 700
-        catImageView.setImageResource(R.drawable.girl_sad)
-        toastContainer!!.addView(catImageView, 0)
-        toast.show()
-    }
-
-    private fun showIdIncorrectMessage() {
-        val toast = Toast.makeText(this,
-                "Unfortunately, id is incorrect... Be careful, honey!",
-                Toast.LENGTH_LONG)
-        toast.setGravity(Gravity.CENTER, 0, 0)
-        val toastContainer = toast.view as LinearLayout?
-        val catImageView = ImageView(this)
-        catImageView.minimumWidth = 500
-        catImageView.maxWidth = 700
-        catImageView.setBackgroundResource(R.drawable.girl_sad)
-        toastContainer!!.addView(catImageView, 0)
+        val girlImageView = ImageView(this)
+        girlImageView.setImageResource(R.drawable.girl_sad)
+        toastContainer!!.addView(girlImageView, 0)
         toast.show()
     }
 

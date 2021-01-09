@@ -24,5 +24,9 @@
     <string name="title_activity_create_game">CreateGameActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="create_game_info">\"Tap to create a ship.\n\nHint:\n 4 battleship (1 blocks) \n 3 cruisers (2 blocks) \n 2 destroyers (3 blocks) \n 1 torpeda (4 blocks)\"</string>
+    <string name="create_game_info">Tap to create a ship.\n\nHint:\n 4 destroyers (1 blocks) \n 3 submarines (2 blocks) \n 2 cruisers (3 blocks) \n 1 battleship (4 blocks)</string>
+    <string name="incorrect_id_message">Unfortunately, id is incorrect… \nBe careful, honey!</string>
+    <string name="incorrect_ship_placement_message">Incorrect placement for ships… \nBe careful, honey!</string>
+    <string name="play_now_ad_message">Be sure your friend is ready to play with you!</string>
+    <string name="menu_profile">profile</string>
 </resources>

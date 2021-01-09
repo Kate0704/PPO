@@ -1,9 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity">
+    android:background="@color/Background"
+    tools:context=".activities.GameActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight">
+
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/header_stat"
+            layout="@layout/statistics_header" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_1_field_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:gravity="center"
+                android:text="ME"
+                android:textColor="@color/textColorLight"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/player1_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#192887"
+                android:padding="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/field1"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+
+                    android:fadeScrollbars="false"
+                    android:isScrollContainer="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scaleType="centerCrop"
+                    tools:listitem="@layout/cell_item" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_2_field_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:gravity="center"
+                android:text="OPPONENT"
+                android:textColor="@color/textColorLight"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/player2_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:background="#192887"
+                android:padding="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/field2"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+
+                    android:fadeScrollbars="false"
+                    android:isScrollContainer="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scaleType="centerCrop"
+                    tools:listitem="@layout/cell_item" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarGAMEWAIT"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<TextView-->
+<!--android:id="@+id/wait_for_my_turn"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:fontFamily="serif-monospace"-->
+<!--android:padding="12dp"-->
+<!--android:text="wait"-->
+<!--android:textAllCaps="true"-->
+<!--android:textColor="@color/design_default_color_on_secondary"-->
+<!--android:textSize="10sp"-->
+<!--android:textStyle="bold"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="@id/player_1_field_name" />-->

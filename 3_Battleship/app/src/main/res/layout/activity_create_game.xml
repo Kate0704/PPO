@@ -5,38 +5,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CreateGameActivity">
-
-    <ProgressBar
-        android:id="@+id/progress_bar_play"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".activities.CreateGameActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/electrolize"
             android:text="Arrange your ships"
-            android:textSize="40dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="40dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/electrolize"
             android:text="(Oh, hope u know the rules)"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -47,13 +43,17 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/field"
-                android:layout_width="350dp"
-                android:layout_height="350dp"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
                 android:layout_gravity="center"
-                android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
-                android:scrollbars="none"
-                tools:listitem="@layout/cell_item"/>
+
+                android:fadeScrollbars="false"
+                android:isScrollContainer="false"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:scaleType="centerCrop"
+                tools:listitem="@layout/cell_item" />
 
         </LinearLayout>
 
@@ -62,12 +62,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:hint="ENTER GAME ID, PLEASE"/>
+            android:fontFamily="@font/electrolize"
+            android:hint="ENTER GAME ID, PLEASE"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:gravity="bottom">
 
             <Button
@@ -75,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="I'm ready. Let's play!"
-                android:textColor="@color/textColorLight"/>
+                android:textColor="@color/textColorLight" />
         </LinearLayout>
 
         <TextView
@@ -84,7 +87,7 @@
             android:layout_marginHorizontal="60dp"
             android:layout_marginBottom="30dp"
             android:text="(Will be enabled as u arrange your ships)"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
 
     </LinearLayout>
 
@@ -95,13 +98,22 @@
         android:clickable="true"
         android:layout_gravity="end"
         android:layout_margin="10dp"
-        app:backgroundTint="@color/colorSecondaryLight"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@android:drawable/ic_menu_help"
         android:foregroundGravity="center"
         app:maxImageSize="50dp"
         android:focusable="true" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_play"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--<fragment-->
