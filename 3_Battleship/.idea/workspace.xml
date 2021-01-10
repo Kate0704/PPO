@@ -34,31 +34,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d33f78a5-1f4f-495c-a5b4-c55b4aa24437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/ProfileActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/adapters/StatAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/stat_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/UserInfo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kate.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Battleship.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Battleship.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/MenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/MenuActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/StatisticsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/StatisticsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/LoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/ProfileActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/ProfileActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ofkvbalreq6tkfbm]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_API_R]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -100,8 +96,8 @@
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-redmi_note_8_pro-ofkvbalreq6tkfbm" />
     <property name="DEBUGGABLE_PROCESS" value="ppo.battleship" />
     <property name="DEBUGGER_ID" value="Auto" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ofkvbalreq6tkfbm" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-10T13:50:24.363Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_API_R" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-10T16:28:42.748Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -296,22 +292,22 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1609886823839" />
-    <state width="1807" height="194" key="GridCell.Tab.0.bottom" timestamp="1610288657434">
+    <state width="1807" height="149" key="GridCell.Tab.0.bottom" timestamp="1610296826182">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="194" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1610288657434" />
-    <state width="1807" height="194" key="GridCell.Tab.0.center" timestamp="1610288657433">
+    <state width="1807" height="149" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1610296826182" />
+    <state width="1807" height="149" key="GridCell.Tab.0.center" timestamp="1610296826181">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="194" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1610288657433" />
-    <state width="1807" height="194" key="GridCell.Tab.0.left" timestamp="1610288657433">
+    <state width="1807" height="149" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1610296826181" />
+    <state width="1807" height="149" key="GridCell.Tab.0.left" timestamp="1610296826181">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="194" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1610288657433" />
-    <state width="1807" height="194" key="GridCell.Tab.0.right" timestamp="1610288657433">
+    <state width="1807" height="149" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1610296826181" />
+    <state width="1807" height="149" key="GridCell.Tab.0.right" timestamp="1610296826181">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="194" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1610288657433" />
+    <state width="1807" height="149" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1610296826181" />
     <state width="1807" height="180" key="GridCell.Tab.1.bottom" timestamp="1610288657420">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

@@ -67,4 +67,6 @@ dependencies {
     // avatar
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

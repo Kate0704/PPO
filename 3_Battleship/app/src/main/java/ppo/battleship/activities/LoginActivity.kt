@@ -13,8 +13,14 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import ppo.battleship.R
 import ppo.battleship.databinding.ActivityLoginBinding
+import ppo.battleship.models.UserInfo
+import java.util.HashMap
 
 
 class LoginActivity : AppCompatActivity(){
@@ -22,6 +28,7 @@ class LoginActivity : AppCompatActivity(){
     private lateinit var auth: FirebaseAuth
     private val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
     private lateinit var googleSignInClient: GoogleSignInClient
+    private val dbRef = FirebaseDatabase.getInstance().getReference("users")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
