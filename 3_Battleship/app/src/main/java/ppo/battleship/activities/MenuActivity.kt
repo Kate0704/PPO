@@ -31,6 +31,7 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.menuUsername.text = currentUser?.displayName
+        binding.menuProfile.setOnClickListener(this)
         binding.menuStartGame.setOnClickListener(this)
         binding.menuJoinGame.setOnClickListener(this)
         binding.menuStats.setOnClickListener(this)
@@ -46,8 +47,9 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun showStats() {
-
+    private fun goToStats() {
+        val intent = Intent(this, StatisticsActivity::class.java)
+        this.startActivity(intent)
     }
 
     private fun joinGame() {
@@ -62,11 +64,17 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         this.startActivity(intent)
     }
 
+    private fun goToProfile() {
+        val intent = Intent(this, ProfileActivity::class.java)
+        this.startActivity(intent)
+    }
+
     override fun onClick(v: View?) {
         when(v){
+            binding.menuProfile -> goToProfile()
             binding.menuStartGame -> createGame()
             binding.menuJoinGame -> joinGame()
-            binding.menuStats -> showStats()
+            binding.menuStats -> goToStats()
             binding.menuLogOut -> logout()
         }
     }
