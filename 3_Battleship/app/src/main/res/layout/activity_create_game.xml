@@ -98,7 +98,7 @@
         android:clickable="true"
         android:layout_gravity="end"
         android:layout_margin="10dp"
-        app:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@android:drawable/ic_menu_help"

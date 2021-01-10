@@ -49,7 +49,7 @@ class CreateGameActivity : AppCompatActivity(){
         binding.progressBarPlay.visibility = View.GONE
 
         FieldReviewer(cellList).initializeFieldImages(resources, packageName)
-        val adapter = GridAdapter(cellList)
+        val adapter = GridAdapter(resources, cellList) {cell, pos -> cellClicked(cell, pos)}
         binding.field.layoutManager = GridLayoutManager(this, 10)
         binding.field.adapter = adapter
 
@@ -62,6 +62,12 @@ class CreateGameActivity : AppCompatActivity(){
         }
         binding.floatingActionButtonInfo.setOnClickListener{ showInfoDialog() }
         setContentView(binding.root)
+    }
+
+    private fun cellClicked(cell: Cell, pos: Int): Boolean {
+        if (cell.getCellType() == Type.EMPTY) cell.setCellType(Type.SHIP)
+        else cell.setCellType(Type.EMPTY)
+        return true
     }
 
     private fun showInfoDialog() {
@@ -104,35 +110,31 @@ class CreateGameActivity : AppCompatActivity(){
         val checkListener: ValueEventListener
         checkListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (!dataSnapshot.exists()) {
-                    game.removeEventListener(this)
-                    val gson = Gson()
-                    val gsonCellList = gson.toJson(cellList)
-                    val gsonCellListEmpty = gson.toJson(MutableList(100) { Cell() })
-                    val playerName = currentUser.displayName
-                    if (!join) {
-                        game.setValue(GameInfo(playerName,"", gsonCellList, gsonCellListEmpty))
-                        startGame(join)
-                    }
-                    else if (dataSnapshot.value != null){
-                        game.child("player_2").setValue(playerName)
-                        game.child("player_2_field").setValue(gsonCellList)
-                        startGame(join)
-                    }
-                    else showError(getString(R.string.incorrect_id_message))
+                val gson = Gson()
+                val gsonCellList = gson.toJson(cellList)
+                val gsonCellListEmpty = gson.toJson(MutableList(100) { Cell() })
+                val playerName = currentUser.displayName
+                game.removeEventListener(this)
+                if (!dataSnapshot.exists() && !join) {
+                    game.setValue(GameInfo(playerName, "", gsonCellList, gsonCellListEmpty))
+                    startGame(join)
+                }
+                else if (dataSnapshot.exists() && join){
+                    game.child("client").setValue(playerName)
+                    game.child("client_field").setValue(gsonCellList)
+                    startGame(join)
                 }
                 else showError(getString(R.string.incorrect_id_message))
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
         game.addValueEventListener(checkListener)
-        binding.progressBarPlay.visibility = View.GONE
     }
 
     private fun startGame(start: Boolean) {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("id", id)
-        intent.putExtra("start", start)
+        intent.putExtra("start", !start)
         this.startActivity(intent)
         finish()
     }

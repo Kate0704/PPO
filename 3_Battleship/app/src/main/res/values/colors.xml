@@ -17,6 +17,6 @@
 
     <color name="timerTimeColor">#95599F</color>
     <color name="timerStageColor">#4A1852</color>
-    <color name="ship">#FFF8D7</color>
-    <color name="miss">#72FFFFFF</color>
+    <color name="ship">#FFFFFF</color>
+    <color name="miss">#65FFFFFF</color>
 </resources>

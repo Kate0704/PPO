@@ -34,49 +34,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d33f78a5-1f4f-495c-a5b4-c55b4aa24437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/adapters/GridAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/FieldReviewer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/electrolize.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/StatisticsActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cell_miss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kate.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/Cell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/Cell.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/CreateGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/CreateGameActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/GameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/GameActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/GameInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/GameInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/GridAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/LoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/MenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/MenuActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cell_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cell_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_part_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/CreateGameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/CreateGameActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/GameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/GameActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/MenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/MenuActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/adapters/GridAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/adapters/GridAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/FieldReviewer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/FieldReviewer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/GameInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/GameInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/girl_loose.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_game.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/cell_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cell_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/statistics_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/statistics_header.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ofkvbalreq6tkfbm]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_API_R]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -98,10 +84,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="navigationResourceFile" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -118,6 +104,8 @@
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-redmi_note_8_pro-ofkvbalreq6tkfbm" />
     <property name="DEBUGGABLE_PROCESS" value="ppo.battleship" />
     <property name="DEBUGGER_ID" value="Auto" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_API_R" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-10T13:01:48.892Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -143,6 +131,9 @@
     </key>
     <key name="android.template.-2071417338">
       <recent name="ppo.battleship" />
+    </key>
+    <key name="android.template.-1886892445">
+      <recent name="ppo.battleship.activities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/ppo/battleship/models" />
@@ -273,30 +264,30 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="767" y="271" width="442" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1610072815942" />
-    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610149893966">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610283963298">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610149893966" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610283963298" />
     <state x="746" y="327" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1610142416880">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="746" y="327" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610142416880" />
-    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog" timestamp="1610067045494">
+    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog" timestamp="1610221553148">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610067045494" />
-    <state x="909" y="291" width="357" height="381" key="AndroidCreateXmlResourceDialog" timestamp="1609977967057">
+    <state x="576" y="310" width="824" height="484" key="AndroidCreateResourceFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610221553148" />
+    <state x="909" y="291" width="356" height="381" key="AndroidCreateXmlResourceDialog" timestamp="1610151022859">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="909" y="291" width="357" height="381" key="AndroidCreateXmlResourceDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1609977967057" />
-    <state x="747" y="300" width="493" height="505" key="AndroidProcessChooserDialog" timestamp="1610141372628">
+    <state x="909" y="291" width="356" height="381" key="AndroidCreateXmlResourceDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610151022859" />
+    <state x="747" y="300" width="493" height="505" key="AndroidProcessChooserDialog" timestamp="1610283814439">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="747" y="300" width="493" height="505" key="AndroidProcessChooserDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610141372628" />
-    <state width="516" height="506" key="DebuggerActiveHint" timestamp="1610141399749">
+    <state x="747" y="300" width="493" height="505" key="AndroidProcessChooserDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1610283814439" />
+    <state width="1211" height="506" key="DebuggerActiveHint" timestamp="1610277892818">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="516" height="506" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1610141399749" />
+    <state width="1211" height="506" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1610277892818" />
     <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1609933157881">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -309,38 +300,38 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1609886823839" />
-    <state width="1807" height="155" key="GridCell.Tab.0.bottom" timestamp="1610150790572">
+    <state width="1807" height="97" key="GridCell.Tab.0.bottom" timestamp="1610283718448">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="155" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1610150790572" />
-    <state width="1807" height="155" key="GridCell.Tab.0.center" timestamp="1610150790571">
+    <state width="1807" height="97" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1610283718448" />
+    <state width="1807" height="97" key="GridCell.Tab.0.center" timestamp="1610283718448">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="155" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1610150790571" />
-    <state width="1807" height="155" key="GridCell.Tab.0.left" timestamp="1610150790571">
+    <state width="1807" height="97" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1610283718448" />
+    <state width="1807" height="97" key="GridCell.Tab.0.left" timestamp="1610283718447">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="155" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1610150790571" />
-    <state width="1807" height="155" key="GridCell.Tab.0.right" timestamp="1610150790572">
+    <state width="1807" height="97" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1610283718447" />
+    <state width="1807" height="97" key="GridCell.Tab.0.right" timestamp="1610283718448">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="155" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1610150790572" />
-    <state width="1807" height="57" key="GridCell.Tab.1.bottom" timestamp="1610147203236">
+    <state width="1807" height="97" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1610283718448" />
+    <state width="1807" height="97" key="GridCell.Tab.1.bottom" timestamp="1610283795555">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="57" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1610147203236" />
-    <state width="1807" height="57" key="GridCell.Tab.1.center" timestamp="1610147203236">
+    <state width="1807" height="97" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1610283795555" />
+    <state width="1807" height="97" key="GridCell.Tab.1.center" timestamp="1610283795555">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="57" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1610147203236" />
-    <state width="1807" height="57" key="GridCell.Tab.1.left" timestamp="1610147203236">
+    <state width="1807" height="97" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1610283795555" />
+    <state width="1807" height="97" key="GridCell.Tab.1.left" timestamp="1610283795554">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="57" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1610147203236" />
-    <state width="1807" height="57" key="GridCell.Tab.1.right" timestamp="1610147203236">
+    <state width="1807" height="97" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1610283795554" />
+    <state width="1807" height="97" key="GridCell.Tab.1.right" timestamp="1610283795555">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="57" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1610147203236" />
+    <state width="1807" height="97" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1610283795555" />
     <state x="765" y="332" width="446" height="440" key="chooseDestDirectoryDialog" timestamp="1608304826792">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -349,6 +340,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="683" y="291" width="621" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1609844634659" />
+    <state x="657" y="253" key="run.anything.popup" timestamp="1610256095227">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1610256095227" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1610065741344">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -359,23 +354,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/CreateGameActivity.kt</url>
-          <line>114</line>
-          <option name="timeStamp" value="44" />
+          <line>134</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/CreateGameActivity.kt</url>
-          <line>136</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/FieldReviewer.kt</url>
+          <line>93</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/CreateGameActivity.kt</url>
-          <line>124</line>
-          <option name="timeStamp" value="46" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/models/FieldReviewer.kt</url>
+          <line>27</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/adapters/GridAdapter.kt</url>
+          <line>34</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ppo/battleship/activities/GameActivity.kt</url>
-          <line>27</line>
-          <option name="timeStamp" value="47" />
+          <line>331</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
