@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".activities.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/user_imagePreview"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/girl" />
+
+    <TextView
+        android:id="@+id/user_nameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:gravity="center"
+        android:textSize="32sp" />
+
+    <Switch
+        android:id="@+id/user_useGravatarSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Use Gravatar"
+        android:textSize="32sp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+</LinearLayout>

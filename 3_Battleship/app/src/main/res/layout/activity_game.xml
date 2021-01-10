@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/game_holder"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:contextClickable="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".activities.GameActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/status_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/two_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/electrolize"
+            android:text=" : "
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_player1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/app_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="70dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/two_dots"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/girl" />
+
+        <ImageView
+            android:id="@+id/imageView_player2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="70dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/two_dots"
+            app:srcCompat="@drawable/girl" />
+
+        <TextView
+            android:id="@+id/score_player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/electrolize"
+            android:text=""
+            android:textSize="32sp"
+            app:layout_constraintStart_toEndOf="@id/two_dots"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/score_player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/electrolize"
+            android:text=""
+            android:textSize="32sp"
+            app:layout_constraintEnd_toStartOf="@id/two_dots"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/who_moves_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/electrolize"
+            android:includeFontPadding="false"
+            android:text="my turn"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/two_dots"
+            app:layout_constraintRight_toRightOf="@id/two_dots"
+            app:layout_constraintTop_toBottomOf="@id/two_dots"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryLight"
+        app:layout_constraintTop_toBottomOf="@id/status_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+<!--        <include-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:id="@+id/header_stat"-->
+<!--            layout="@layout/statistics_header" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_1_field_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:gravity="center"
+                android:text="ME"
+                android:textColor="@color/textColorLight"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/player1_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#192887"
+                android:padding="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/field1"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+
+                    android:clickable="false"
+                    android:contextClickable="false"
+                    android:saveEnabled="false"
+
+                    android:fadeScrollbars="false"
+                    android:isScrollContainer="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scaleType="centerCrop"
+                    tools:listitem="@layout/cell_item" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_2_field_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:gravity="center"
+                android:text="OPPONENT"
+                android:textColor="@color/textColorLight"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/player2_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:background="#192887"
+                android:padding="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/field2"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+
+                    android:fadeScrollbars="false"
+                    android:isScrollContainer="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scaleType="centerCrop"
+                    tools:listitem="@layout/cell_item" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarGAMEWAIT"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<TextView-->
+<!--android:id="@+id/wait_for_my_turn"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:fontFamily="serif-monospace"-->
+<!--android:padding="12dp"-->
+<!--android:text="wait"-->
+<!--android:textAllCaps="true"-->
+<!--android:textColor="@color/design_default_color_on_secondary"-->
+<!--android:textSize="10sp"-->
+<!--android:textStyle="bold"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="@id/player_1_field_name" />-->

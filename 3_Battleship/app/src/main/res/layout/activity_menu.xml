@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_title"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/menu_hi_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hi_message"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_holder" />
+
+    <TextView
+        android:id="@+id/menu_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_hi_message" />
+
+    <ImageView
+        android:id="@+id/image_holder"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/girl_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_game"/>
+
+    <Button
+        android:id="@+id/menu_profile"
+        style="@style/MenuButtonStyle"
+        android:layout_marginTop="20dp"
+        android:text="@string/menu_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_username" />
+
+    <Button
+        android:id="@+id/menu_start_game"
+        style="@style/MenuButtonStyle"
+        android:text="@string/menu_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_profile" />
+
+    <Button
+        android:id="@+id/menu_join_game"
+        style="@style/MenuButtonStyle"
+        android:text="@string/menu_join"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_start_game"/>
+
+    <Button
+        android:id="@+id/menu_stats"
+        style="@style/MenuButtonStyle"
+        android:text="@string/menu_statistics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_join_game" />
+
+    <Button
+        android:id="@+id/menu_log_out"
+        style="@style/MenuButtonStyle"
+        android:text="@string/menu_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_stats" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

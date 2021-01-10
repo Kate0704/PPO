@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.CreateGameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/electrolize"
+            android:text="Arrange your ships"
+            android:textAlignment="center"
+            android:textSize="40dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/electrolize"
+            android:text="(Oh, hope u know the rules)"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#192887"
+            android:padding="2dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/field"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+
+                android:fadeScrollbars="false"
+                android:isScrollContainer="false"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:scaleType="centerCrop"
+                tools:listitem="@layout/cell_item" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/id_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/electrolize"
+            android:hint="ENTER GAME ID, PLEASE"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btn_play_create_game_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I'm ready. Let's play!"
+                android:textColor="@color/textColorLight" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginBottom="30dp"
+            android:text="(Will be enabled as u arrange your ships)"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@android:drawable/ic_menu_help"
+        android:foregroundGravity="center"
+        app:maxImageSize="50dp"
+        android:focusable="true" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_play"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<fragment-->
+<!--android:id="@+id/field_fragment"-->
+<!--android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:layout_gravity="center"-->
+<!--app:defaultNavHost="true"-->
+<!--app:navGraph="@navigation/nav_graph" />-->
