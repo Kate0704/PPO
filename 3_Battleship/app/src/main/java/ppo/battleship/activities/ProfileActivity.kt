@@ -71,7 +71,6 @@ class ProfileActivity : AppCompatActivity() {
         checkIfExists.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
             }
-
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(!snapshot.exists()){
                     userInfo = UserInfo(user.displayName!!, user.email!!, user.uid)
@@ -137,9 +136,7 @@ class ProfileActivity : AppCompatActivity() {
     }
     private fun downloadFromFirebase() {
         val path = getImagePath()
-        if(path.isEmpty())
-            return
-
+        if(path.isEmpty()) return
         val localFile = File.createTempFile("image", ".jpeg")
         storageRef.child("images/${getUID()}/$path").getFile(localFile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localFile.path)
@@ -162,16 +159,11 @@ class ProfileActivity : AppCompatActivity() {
             Toast.makeText(application, "Please Select an Image", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun isGravatarSource() : Boolean{
-        return userInfo.useGravatar
-    }
+    private fun isGravatarSource() : Boolean = userInfo.useGravatar
+    private fun getImagePath() : String = if(userInfo.avatar.isEmpty()) "" else userInfo.avatar
+    private fun getUID() = userInfo.uid
     private fun setUseGravatar(isChecked : Boolean){
         userInfo.useGravatar = isChecked
         dbRef.child("${userInfo.uid}/useGravatar").setValue(isChecked)
     }
-    private fun getImagePath() : String{
-        return if(userInfo.avatar.isEmpty()) "" else userInfo.avatar
-    }
-    private fun getUID() = userInfo.uid
-
 }
